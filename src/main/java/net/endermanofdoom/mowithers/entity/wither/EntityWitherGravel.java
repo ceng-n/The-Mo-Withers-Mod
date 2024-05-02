@@ -27,7 +27,6 @@ public class EntityWitherGravel extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 6;
-		this.bossInfo.setColor(BossInfo.Color.YELLOW);
 	}
 	
 	protected void initEntityAI()

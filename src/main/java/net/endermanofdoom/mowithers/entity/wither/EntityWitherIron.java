@@ -26,7 +26,6 @@ public class EntityWitherIron extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 18;
-		this.bossInfo.setColor(BossInfo.Color.WHITE);
 	}
 	
 	protected void initEntityAI()

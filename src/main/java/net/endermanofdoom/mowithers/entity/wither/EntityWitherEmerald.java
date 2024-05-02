@@ -27,7 +27,6 @@ public class EntityWitherEmerald extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 80;
-		this.bossInfo.setColor(BossInfo.Color.GREEN);
 	}
 	
 	protected void initEntityAI()

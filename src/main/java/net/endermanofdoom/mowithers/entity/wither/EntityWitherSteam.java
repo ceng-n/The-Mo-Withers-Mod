@@ -30,7 +30,6 @@ public class EntityWitherSteam extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 3;
-		this.bossInfo.setColor(BossInfo.Color.WHITE);
 	}
 	
 	protected void initEntityAI()

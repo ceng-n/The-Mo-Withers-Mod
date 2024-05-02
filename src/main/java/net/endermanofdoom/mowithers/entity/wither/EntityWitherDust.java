@@ -35,7 +35,6 @@ public class EntityWitherDust extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 5;
-		this.bossInfo.setColor(BossInfo.Color.YELLOW);
 	}
 	
 	protected void initEntityAI()

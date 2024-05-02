@@ -43,8 +43,6 @@ public class EntityWitherAvatar extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 600;
-		this.bossInfo.setColor(BossInfo.Color.PURPLE);
-		this.bossInfo.setOverlay(BossInfo.Overlay.NOTCHED_10);
 		this.setNoGravity(true);
 	}
 	
@@ -292,23 +290,6 @@ public class EntityWitherAvatar extends EntityHostileWither
         if (this.blockBreakCounter <= 0 && getAttackTarget() != null)
             this.blockBreakCounter = 1;
 
-        switch (rand.nextInt(5))
-        {
-        case 1:
-    		this.bossInfo.setColor(BossInfo.Color.RED);
-    		break;
-        case 2:
-    		this.bossInfo.setColor(BossInfo.Color.YELLOW);
-    		break;
-        case 3:
-    		this.bossInfo.setColor(BossInfo.Color.GREEN);
-    		break;
-        case 4:
-    		this.bossInfo.setColor(BossInfo.Color.WHITE);
-    		break;
-        default:
-    		this.bossInfo.setColor(BossInfo.Color.BLUE);
-        }
         
         if (!this.world.isRemote && this.isEntityAlive())
         {

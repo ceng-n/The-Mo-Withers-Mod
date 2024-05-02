@@ -25,7 +25,6 @@ public class EntityWitherObsidian extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 300;
-		this.bossInfo.setColor(BossInfo.Color.PURPLE);
 	}
 	
 	protected void initEntityAI()

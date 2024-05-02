@@ -27,7 +27,6 @@ public class EntityWitherTNT extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 120;
-		this.bossInfo.setColor(BossInfo.Color.RED);
 	}
 	
 	protected void initEntityAI()

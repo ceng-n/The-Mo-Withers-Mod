@@ -28,7 +28,6 @@ public class EntityWitherLapis extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 10;
-		this.bossInfo.setColor(BossInfo.Color.BLUE);
 	}
 	
 	protected void initEntityAI()

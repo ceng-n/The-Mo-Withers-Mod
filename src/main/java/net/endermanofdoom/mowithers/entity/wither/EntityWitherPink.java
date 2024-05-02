@@ -46,7 +46,6 @@ public class EntityWitherPink extends EntityBaseWither
 	public EntityWitherPink(World worldIn) 
 	{
 		super(worldIn);
-		this.bossInfo.setColor(BossInfo.Color.PINK);
 	}
 	
 	protected void initEntityAI()

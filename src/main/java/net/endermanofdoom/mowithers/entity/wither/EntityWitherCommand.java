@@ -119,8 +119,6 @@ public class EntityWitherCommand extends EntityHostileWither
 		super(worldIn);
 		this.experienceValue *= 4000;
 		this.noClip = true;
-		this.bossInfo.setColor(BossInfo.Color.YELLOW);
-		this.bossInfo.setOverlay(BossInfo.Overlay.NOTCHED_20);
 	}
 	
 	protected void initEntityAI()

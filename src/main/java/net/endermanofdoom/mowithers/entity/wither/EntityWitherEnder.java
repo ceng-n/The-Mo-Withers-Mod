@@ -34,7 +34,6 @@ public class EntityWitherEnder extends EntityHostileWither
 		super(worldIn);
 		this.experienceValue *= 12;
 		this.isImmuneToFire = false;
-		this.bossInfo.setColor(BossInfo.Color.PINK);
         this.setPathPriority(PathNodeType.WATER, -1.0F);
 	}
 	

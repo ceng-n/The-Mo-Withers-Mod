@@ -26,7 +26,6 @@ public class EntityWitherGlass extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 12;
-		this.bossInfo.setColor(BossInfo.Color.WHITE);
 	}
 	
 	protected void initEntityAI()

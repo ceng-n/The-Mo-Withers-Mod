@@ -35,7 +35,6 @@ public class EntityWitherIce extends EntityHostileWither
 		super(worldIn);
 		this.isImmuneToFire = false;
 		this.experienceValue *= 8;
-		this.bossInfo.setColor(BossInfo.Color.BLUE);
         this.tasks.removeTask(new EntityAISwimming(this));
 	}
 	

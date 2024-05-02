@@ -27,7 +27,6 @@ public class EntityWitherZombie extends EntityHostileWither
 		super(worldIn);
 		this.experienceValue *= 3;
 		this.isImmuneToFire = false;
-		this.bossInfo.setColor(BossInfo.Color.RED);
 	}
 	
 	protected void initEntityAI()

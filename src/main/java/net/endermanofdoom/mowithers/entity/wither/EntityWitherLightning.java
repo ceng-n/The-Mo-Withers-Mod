@@ -29,7 +29,6 @@ public class EntityWitherLightning extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 9;
-		this.bossInfo.setColor(BossInfo.Color.YELLOW);
 	}
 	
 	protected void initEntityAI()

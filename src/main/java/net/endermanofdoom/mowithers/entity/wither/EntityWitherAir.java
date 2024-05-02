@@ -41,7 +41,6 @@ public class EntityWitherAir extends EntityHostileWither
 		super(worldIn);
 		this.experienceValue *= 4;
 		this.noClip = true;
-		this.bossInfo.setColor(BossInfo.Color.WHITE);
         this.moveHelper = new EntityWitherAir.WitherMoveHelper(this);
 	}
 	

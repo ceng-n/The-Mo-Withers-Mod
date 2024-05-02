@@ -2,6 +2,8 @@ package net.endermanofdoom.mowithers.entity.wither;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import java.util.List;
+import java.util.UUID;
+
 import javax.annotation.Nullable;
 import com.google.common.base.Predicate;
 
@@ -44,8 +46,6 @@ public class EntityWitherVoid extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 1200;
-		this.bossInfo.setColor(BossInfo.Color.PURPLE);
-		this.bossInfo.setOverlay(BossInfo.Overlay.NOTCHED_12);
         this.tasks.addTask(7, new EntityAIWatchClosest2(this, EntityPlayer.class, 100F, 1));
 	}
 	

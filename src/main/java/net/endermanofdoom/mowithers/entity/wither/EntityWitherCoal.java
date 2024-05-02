@@ -27,7 +27,6 @@ public class EntityWitherCoal extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 9;
-		this.bossInfo.setColor(BossInfo.Color.PURPLE);
 	}
 	
 	protected void initEntityAI()

@@ -36,7 +36,6 @@ public class EntityWitherMagma extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 16;
-		this.bossInfo.setColor(BossInfo.Color.RED);
 	}
 	
 	protected void initEntityAI()

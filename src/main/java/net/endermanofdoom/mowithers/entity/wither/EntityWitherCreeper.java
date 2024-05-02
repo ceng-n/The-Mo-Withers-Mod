@@ -55,7 +55,6 @@ public class EntityWitherCreeper extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 6;
-		this.bossInfo.setColor(BossInfo.Color.GREEN);
 	}
     
     public TextFormatting getNameColor()

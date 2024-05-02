@@ -42,8 +42,6 @@ public class EntityWitherDragon extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 2800;
-		this.bossInfo.setColor(BossInfo.Color.PURPLE);
-		this.bossInfo.setOverlay(BossInfo.Overlay.NOTCHED_12);
 	}
 	
 	protected void initEntityAI()

@@ -33,7 +33,6 @@ public class EntityWitherEarth extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 8;
-		this.bossInfo.setColor(BossInfo.Color.GREEN);
 	}
 	
 	protected void initEntityAI()

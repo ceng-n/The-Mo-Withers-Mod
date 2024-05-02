@@ -44,8 +44,6 @@ public class EntityWitherBedrock extends EntityHostileWither
 	{
 		super(worldIn);
 		this.experienceValue *= 2400;
-		this.bossInfo.setColor(BossInfo.Color.PURPLE);
-		this.bossInfo.setOverlay(BossInfo.Overlay.NOTCHED_20);
 	}
 	
 	protected void initEntityAI()
