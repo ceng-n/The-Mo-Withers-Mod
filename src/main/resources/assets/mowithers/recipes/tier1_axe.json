@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "xx",
+        "xb",
+        " b"
+    ],
+    "key":
+    {
+		"x":
+		{
+			"item": "mowithers:atrophic_crystal"
+		},
+		"b":
+		{
+			"item": "minecraft:blaze_rod"
+		}
+    },
+    "result":
+    {
+        "item": "mowithers:atrophic_axe",
+        "count": 1
+    }
+}

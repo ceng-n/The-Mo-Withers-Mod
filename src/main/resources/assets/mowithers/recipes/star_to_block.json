@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key":
+    {
+		"x":
+		{
+			"item": "minecraft:nether_star",
+			"data": 0
+		}
+    },
+    "result":
+    {
+        "item": "mowithers:nether_star_block",
+        "count": 1,
+        "data": 0
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#X#"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:sugar"
+    },
+    "#": {
+      "item": "minecraft:dye",
+      "data": 3
+    }
+  },
+    "result":
+    {
+        "item": "mowithers:chocolate",
+        "count": 4
+    }
+}

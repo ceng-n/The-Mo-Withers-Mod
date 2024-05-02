@@ -1,0 +1,248 @@
+##Mo Withers
+
+##Entities
+
+#Mobs
+entity.flying_head.name=Lost Skull
+entity.skeleton_wither.name=Wither Skeleton
+entity.spider_wither.name=Wane
+entity.zombie_wither.name=Blight
+entity.creeper_wither.name=Atrophy
+entity.blaze_wither.name=Shrivel
+entity.squid_wither.name=Aquafade
+entity.enderman_wither.name=Endroop
+entity.ghast_wither.name=Evaporation
+entity.human_wither.name=Languish
+entity.golem_wither.name=Deteriorator
+entity.cultist.name=Wither Cultists
+entity.cultist_lesser.name=Cultist Peasant
+entity.cultist_greater.name=Cultist Priest
+entity.cultist_leader.name=Cultist Cardinal
+entity.cultist_leader_sec.name=Cardinal Viticus
+
+#Projectiles
+entity.wither_skull_shared.name=Wither Skull
+
+#Withers
+#Nature
+entity.wither.normal.name=Wither
+entity.wither.creeper.name=Creeper Wither
+entity.wither.zombie.name=Zombie Wither
+entity.wither.ender.name=Ender Wither
+
+#Elements
+entity.wither.fire.name=Fire Wither
+entity.wither.earth.name=Earth Wither
+entity.wither.water.name=Water Wither
+entity.wither.air.name=Air Wither
+entity.wither.ice.name=Ice Wither
+entity.wither.dust.name=Dust Wither
+entity.wither.steam.name=Steam Wither
+entity.wither.magma.name=Magma Wither
+entity.wither.lightning.name=Lightning Wither
+entity.wither.tornado.name=Tornado Wither
+entity.wither.hurricane.name=Hurricane Wither
+entity.wither.avatar.name=Avatar Wither
+
+#Block
+entity.wither.sand.name=Sand Wither
+entity.wither.gravel.name=Gravel Wither
+entity.wither.glass.name=Glass Wither
+entity.wither.stone.name=Stone Wither
+entity.wither.coal.name=Coal Wither
+entity.wither.lapis.name=Lapis Wither
+entity.wither.iron.name=Iron Wither
+entity.wither.gold.name=Gold Wither
+entity.wither.diamond.name=Diamond Wither
+entity.wither.emerald.name=Emerald Wither
+entity.wither.tnt.name=TNT Wither
+entity.wither.obsidian.name=Obsidian Wither
+entity.wither.atrophic.name=Atrophic Wither
+entity.wither.necrotic.name=Necrotic Wither
+entity.wither.entropic.name=Entropic Wither
+
+#Good
+entity.wither.ally.name=Friendly Wither
+entity.wither.pink.name=Pink Wither
+
+#Evil
+entity.wither.hare.name=Killer Wither Hare
+
+#Holidays
+entity.wither.patty.name=Saint Patrick's Day Wither
+
+#Superbosses
+entity.wither.void.name=Void Wither
+entity.wither.dragon.name=Wither Dragon
+entity.wither.bedrock.name=Adminium Wither
+entity.wither.command.name=Command Wither
+
+#Damage
+death.attack.freeze=%1$s froze to death
+death.attack.burn_mob=%1$s was burnt to a crisp by %2$s
+death.attack.cramming_mob=%1$s was buried alive by %2$s
+death.attack.drown_mob=%1$s was drowned by %2$s
+death.attack.inwall_mob=%1$s was asphyxiated by %2$s
+
+#Blocks
+tile.atrophic_ore.name=Atrophic Ore
+tile.atrophic_ore_nether.name=Atrophic Ore
+tile.atrophic_block.name=Atrophic Block
+tile.nether_star_block.name=Condensed Nether Stars
+
+#Items
+item.chocolate.name=Chocolate Bar
+item.nether_star_shard.name=Nether Star Shard
+item.nether_star_dust.name=Nether Star Dust
+item.wither_bone.name=Wither Bone
+item.wither_bone_meal.name=Wither Bonemeal
+item.atrophic_shard.name=Atrophic Shard
+item.atrophic_crystal.name=Atrophic Crystal
+item.atrophic_axe.name=Atrophic Axe
+item.atrophic_hoe.name=Atrophic Hoe
+item.atrophic_pickaxe.name=Atrophic Pickaxe
+item.atrophic_shovel.name=Atrophic Shovel
+item.atrophic_sword.name=Atrophic Sword
+item.atrophic_helmet.name=Atrophic Helmet
+item.atrophic_chestplate.name=Atrophic Chestplate
+item.atrophic_leggings.name=Atrophic Leggings
+item.atrophic_boots.name=Atrophic Boots
+item.necrotic_star.name=Necrotic Star
+item.necrotic_axe.name=Necrotic Axe
+item.necrotic_hoe.name=Necrotic Hoe
+item.necrotic_pickaxe.name=Necrotic Pickaxe
+item.necrotic_shovel.name=Necrotic Shovel
+item.necrotic_sword.name=Necrotic Sword
+item.necrotic_helmet.name=Necrotic Helmet
+item.necrotic_chestplate.name=Necrotic Chestplate
+item.necrotic_leggings.name=Necrotic Leggings
+item.necrotic_boots.name=Necrotic Boots
+item.entropic_matter_unstable.name=Unstable Entropic Matter
+item.entropic_matter.name=Entropic Matter
+item.entropic_axe.name=Entropic Axe
+item.entropic_hoe.name=Entropic Hoe
+item.entropic_pickaxe.name=Entropic Pickaxe
+item.entropic_shovel.name=Entropic Shovel
+item.entropic_sword.name=Entropic Sword
+item.entropic_helmet.name=Entropic Helmet
+item.entropic_chestplate.name=Entropic Chestplate
+item.entropic_leggings.name=Entropic Leggings
+item.entropic_boots.name=Entropic Boots
+item.reaper_hood.name=Reaper's Hood
+item.reaper_cloak.name=Reaper's Cloak
+item.reaper_trousers.name=Reaper's Trousers
+item.reaper_shoes.name=Reaper's Shoes
+
+#Advancements
+advancements.mowithers.root.title=Mo' Withers mod
+advancements.mowithers.root.desc=Obtain a Nether Star. It's only the beginning.
+advancements.mowithers.make_crystal.title=Punctum Mortis
+advancements.mowithers.make_crystal.desc=Craft an Atrophic Crystal
+advancements.mowithers.make_armor.title=Naturae Vires
+advancements.mowithers.make_armor.desc=Craft Atrophic Armor
+advancements.mowithers.kill_elemental.title=Elemental Force
+advancements.mowithers.kill_elemental.desc=Slay one of the base Elemental Withers
+advancements.mowithers.kill_all_elemental.title=Elemental Decemation
+advancements.mowithers.kill_all_elemental.desc=Slay all of the base Elemental Withers
+advancements.mowithers.kill_full_elemental.title=Elemental Mastery
+advancements.mowithers.kill_full_elemental.desc=Slay all of the Elemental Withers
+
+#Creative Tabs
+itemGroup.mowithers=Mo' Withers Mod
+
+#Subtitles
+subtitles.wither.superspawn=A Superboss as been spawned
+subtitles.wither.fall=Something heavy fell
+subtitles.wither.friendly.ambient=Friendly Wither coos
+subtitles.wither.friendly.hurt=Friendly Wither hurts
+subtitles.wither.friendly.death=Friendly Wither dies
+subtitles.wither.gravel.ambient=Gravel Wither angers
+subtitles.wither.gravel.hurt=Gravel Wither hurts
+subtitles.wither.gravel.death=Gravel Wither crumbles
+subtitles.wither.sand.ambient=Sand Wither angers
+subtitles.wither.sand.hurt=Sand Wither hurts
+subtitles.wither.sand.death=Sand Wither crumbles
+subtitles.wither.glass.ambient=Glass Wither angers
+subtitles.wither.glass.hurt=Glass Wither hurts
+subtitles.wither.glass.death=Glass Wither shatters
+subtitles.wither.stone.ambient=Stone Wither angers
+subtitles.wither.stone.hurt=Stone Wither hurts
+subtitles.wither.stone.death=Stone Wither dies
+subtitles.wither.coal.ambient=Coal Wither angers
+subtitles.wither.coal.hurt=Coal Wither hurts
+subtitles.wither.coal.death=Coal Wither dies
+subtitles.wither.lapis.ambient=Lapis Wither angers
+subtitles.wither.lapis.hurt=Lapis Wither hurts
+subtitles.wither.lapis.death=Lapis Wither dies
+subtitles.wither.iron.ambient=Iron Wither angers
+subtitles.wither.iron.hurt=Iron Wither hurts
+subtitles.wither.iron.death=Iron Wither dies
+subtitles.wither.gold.ambient=Gold Wither angers
+subtitles.wither.gold.hurt=Gold Wither hurts
+subtitles.wither.gold.death=Gold Wither dies
+subtitles.wither.diamond.ambient=Diamond Wither angers
+subtitles.wither.diamond.hurt=Diamond Wither hurts
+subtitles.wither.diamond.death=Diamond Wither dies
+subtitles.wither.emerald.ambient=Emerald Wither angers
+subtitles.wither.emerald.hurt=Emerald Wither hurts
+subtitles.wither.emerald.death=Emerald Wither dies
+subtitles.wither.tnt.ambient=TNT Wither angers
+subtitles.wither.tnt.hurt=TNT Wither hurts
+subtitles.wither.tnt.death=TNT Wither dies
+subtitles.wither.obsidian.ambient=Obsidian Wither growls
+subtitles.wither.obsidian.hurt=Obsidian Wither grunts
+subtitles.wither.obsidian.death=Obsidian Wither dies
+subtitles.wither.lightning.ambient=Lightning Wither angers
+subtitles.wither.lightning.hurt=Lightning Wither hurts
+subtitles.wither.lightning.death=Lightning Wither dies
+subtitles.wither.ice.ambient=Ice Wither angers
+subtitles.wither.ice.hurt=Ice Wither hurts
+subtitles.wither.ice.death=Ice Wither dies
+subtitles.wither.patty.ambient=Saint Patrick's Day Wither gleams
+subtitles.wither.patty.hurt=Saint Patrick's Day Wither hurts
+subtitles.wither.patty.death=Saint Patrick's Day Wither dies
+subtitles.wither.valentine.ambient=Valentine's Day Wither gleams
+subtitles.wither.valentine.hurt=Valentine's Day Wither hurts
+subtitles.wither.valentine.death=Valentine's Day Wither dies
+subtitles.wither.pink.ambient=Pink Wither coos
+subtitles.wither.pink.hurt=Pink Wither hurts
+subtitles.wither.pink.death=Pink Wither dies
+subtitles.wither.fire.ambient=Fire Wither angers
+subtitles.wither.fire.hurt=Fire Wither hurts
+subtitles.wither.fire.death=Fire Wither extinguishes
+subtitles.wither.lava.ambient=Magma Wither angerily bubbles
+subtitles.wither.lava.hurt=Magma Wither hurts
+subtitles.wither.lava.death=Magma Wither melts
+subtitles.wither.steam.ambient=Steam Wither angers
+subtitles.wither.steam.hurt=Steam Wither hurts
+subtitles.wither.steam.death=Steam Wither evaporates
+subtitles.wither.water.ambient=Water Wither angerily gurgles
+subtitles.wither.water.hurt=Water Wither hurts
+subtitles.wither.water.death=Water Wither melts
+subtitles.wither.earth.ambient=Earth Wither angers
+subtitles.wither.earth.hurt=Earth Wither hurts
+subtitles.wither.earth.death=Earth Wither crumbles
+subtitles.wither.air.ambient=Air Wither angrily whooshes
+subtitles.wither.air.hurt=Air Wither hurts
+subtitles.wither.air.death=Air Wither dies
+subtitles.wither.dust.ambient=Dust Wither angrily whooshes
+subtitles.wither.dust.hurt=Dust Wither hurts
+subtitles.wither.dust.death=Dust Wither dies
+subtitles.wither.hare.ambient=Hare Wither growls
+subtitles.wither.hare.hurt=Hare Wither grunts
+subtitles.wither.hare.death=Hare Wither dies
+subtitles.wither.avatar.ambient=Avatar Wither growls
+subtitles.wither.avatar.hurt=Avatar Wither grunts
+subtitles.wither.avatar.death=Avatar Wither dies
+subtitles.wither.void.ambient=Void Wither growls
+subtitles.wither.void.hurt=Void Wither grunts
+subtitles.wither.void.death=Void Wither dies
+subtitles.wither.dragon.ambient=Wither Dragon growls
+subtitles.wither.dragon.hurt=Wither Dragon grunts
+subtitles.wither.dragon.death=Wither Dragon dies
+subtitles.wither.bedrock.ambient=Adminium Wither growls
+subtitles.wither.bedrock.hurt=Adminium Wither grunts
+subtitles.wither.bedrock.death=Adminium Wither dies
+subtitles.wither.command.ambient=Command Block Wither growls
+subtitles.wither.command.hurt=Command Block Wither grunts
+subtitles.wither.command.death=Command Block Wither dies

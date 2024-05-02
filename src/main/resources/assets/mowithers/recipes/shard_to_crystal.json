@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        " x ",
+        "xyx",
+        " x "
+    ],
+    "key":
+    {
+		"x":
+		{
+			"item": "mowithers:atrophic_shard",
+			"data": 0
+		},
+		"y":
+		{
+			"item": "minecraft:diamond",
+			"data": 0
+		}
+    },
+    "result":
+    {
+        "item": "mowithers:atrophic_crystal",
+        "count": 1,
+        "data": 0
+    }
+}
