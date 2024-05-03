@@ -2,8 +2,6 @@ package net.endermanofdoom.mowithers.entity.wither;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import java.util.List;
-import java.util.UUID;
-
 import javax.annotation.Nullable;
 import com.google.common.base.Predicate;
 
@@ -36,7 +34,6 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.BossInfo;
 import net.minecraft.world.World;
 
 public class EntityWitherVoid extends EntityHostileWither

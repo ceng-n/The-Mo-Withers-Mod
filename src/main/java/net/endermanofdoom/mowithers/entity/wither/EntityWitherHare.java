@@ -7,7 +7,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.BossInfo;
 import net.minecraft.world.World;
 
 public class EntityWitherHare extends EntityHostileWither
