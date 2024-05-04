@@ -37,7 +37,7 @@ public class EntityWitherEarth extends EntityHostileWither
 	protected void initEntityAI()
     {
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
@@ -199,4 +199,9 @@ public class EntityWitherEarth extends EntityHostileWither
     {
         return isWet() ? 5000000 : 15728880;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {255, 255, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

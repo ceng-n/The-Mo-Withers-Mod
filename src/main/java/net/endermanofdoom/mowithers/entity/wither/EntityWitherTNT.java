@@ -31,7 +31,7 @@ public class EntityWitherTNT extends EntityHostileWither
 	protected void initEntityAI()
     {
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
 	
     public boolean canDestroyBlock(BlockPos blockIn)
@@ -122,7 +122,7 @@ public class EntityWitherTNT extends EntityHostileWither
             this.world.spawnParticle(EnumParticleTypes.BLOCK_DUST, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, Block.getStateId(Blocks.TNT.getDefaultState()));
         }
         
-        if (this.ticksExisted % 2 == 0 && !this.world.isRemote && this.getRamTime() > 60)
+        if (this.ticksExisted % 2 == 0 && !this.world.isRemote && this.getRamTime() < -60)
         {
             for (int l = 0; l < 3; ++l)
             {

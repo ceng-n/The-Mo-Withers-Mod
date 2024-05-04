@@ -47,7 +47,7 @@ public class EntityWitherIce extends EntityHostileWither
 	        }
 	    };
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
     public TextFormatting getNameColor()

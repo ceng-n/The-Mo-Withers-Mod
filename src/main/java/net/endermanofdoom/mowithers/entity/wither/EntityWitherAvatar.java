@@ -1,14 +1,12 @@
 package net.endermanofdoom.mowithers.entity.wither;
 
 import java.util.List;
-import java.util.UUID;
 import javax.annotation.Nullable;
 import com.google.common.base.Predicate;
 import net.endermanofdoom.mac.enums.EnumGender;
 import net.endermanofdoom.mac.enums.EnumLevel;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
-import net.endermanofdoom.mowithers.MoWithers;
 import net.endermanofdoom.mowithers.registry.MSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -26,7 +24,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -55,7 +52,7 @@ public class EntityWitherAvatar extends EntityHostileWither
 	        }
 	    };
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
@@ -425,83 +422,9 @@ public class EntityWitherAvatar extends EntityHostileWither
     	}
     }
     
-	public boolean hasStamina()
-	{
-		return false;
-	}
-	
-	public boolean canRenderBar()
-	{
-		return !isInvisible() && !this.isDead;
-	}
-	
-	public boolean canShowDamage()
-	{
-		return true;
-	}
-	
-	public double getBarHealth()
-	{
-		return this.getWitherHealth();
-	}
-	
-	public double getBarMaxHealth()
-	{
-		return this.getMaxWitherHealth();
-	}
-	
-	public double getBarStamina()
-	{
-		return 0;
-	}
-	
-	public double getBarMaxStamina()
-	{
-		return 0;
-	}
-	
-	public UUID getUniqueBarID() 
-	{
-		return getUniqueID();
-	}
-
-	public String getBarName() 
-	{
-		return getName();
-	}
-	
-	protected void setStamina(double value) {}
-	
-	protected void setMaxStamina(double value) {}
-	
-	public double getStamina()
-	{
-		return 0;
-	}
-
-	public double getMaxStamina()
-	{
-		return 0;
-	}
-	
-	public int getNameBarStart() {return -2;}
-	
-	public int getHealthNameStart() {return 8;}
-	
-	public int getStaminaBarLength() {return 256;}
-	
-	public int getStaminaBarStart() {return 0;}
-	
-	public int getHealthBarLength() {return 256;}
-	
-	public ResourceLocation getBarTexture()
-	{
-		return new ResourceLocation(MoWithers.MODID, "textures/gui/bar_boss.png");
-	}
-    
 	public int[] getBarColor() 
 	{
-		return new int[] {rand.nextInt(255), rand.nextInt(255), rand.nextInt(255), 0, 0, 0};
+		return new int[] {rand.nextInt(255), rand.nextInt(255), rand.nextInt(255), 0, 122, 255};
 	}
     
     /**

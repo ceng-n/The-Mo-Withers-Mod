@@ -31,7 +31,7 @@ public class EntityWitherGravel extends EntityHostileWither
 	protected void initEntityAI()
     {
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
 	
     public boolean canDestroyBlock(BlockPos blockIn)

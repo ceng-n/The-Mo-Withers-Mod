@@ -56,7 +56,7 @@ public class EntityWitherVoid extends EntityHostileWither
 	        }
 	    };
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
     public TextFormatting getNameColor()
@@ -206,7 +206,7 @@ public class EntityWitherVoid extends EntityHostileWither
 
             for (Entity entity : list)
             {
-                if (!(entity instanceof EntityLivingBase) && !(entity instanceof EntityFireball) || this.getRamTime() > 60)
+                if (!(entity instanceof EntityLivingBase) && !(entity instanceof EntityFireball) || this.getRamTime() < -60)
                 {
                 	double force = 8D;
                 	if (entity instanceof EntityLivingBase && ((EntityLivingBase)entity).isSneaking())

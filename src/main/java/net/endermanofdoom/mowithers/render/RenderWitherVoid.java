@@ -114,7 +114,7 @@ public class RenderWitherVoid extends RenderBaseWither<EntityWitherVoid>
                 GlStateManager.enableAlpha();
                 RenderHelper.enableStandardItemLighting();
             }
-            else if (entitylivingbaseIn.getRamTime() > 0)
+            else if (entitylivingbaseIn.getRamTime() < 0)
             {
                 Tessellator tessellator = Tessellator.getInstance();
                 BufferBuilder bufferbuilder = tessellator.getBuffer();

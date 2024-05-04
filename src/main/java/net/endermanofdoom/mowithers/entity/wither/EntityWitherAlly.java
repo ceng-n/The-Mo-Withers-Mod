@@ -40,7 +40,7 @@ public class EntityWitherAlly extends EntityBaseWither
 	    };
 		super.initEntityAI();
         this.tasks.addTask(1, new EntityAIWitherStay(this));
-        this.targetTasks.addTask(3, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(3, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
@@ -141,4 +141,9 @@ public class EntityWitherAlly extends EntityBaseWither
     {
         return EnumWitherType.FRIENDLY;
     }
+    
+	public boolean canRenderBar()
+	{
+		return false;
+	}
 }
