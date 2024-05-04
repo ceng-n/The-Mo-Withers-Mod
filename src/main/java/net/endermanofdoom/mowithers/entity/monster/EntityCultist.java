@@ -884,7 +884,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
 
         protected void castSpell()
         {
-            for (int i = 0; i < EntityCultist.this.getVariant() * 2; ++i)
+            for (int i = 0; i < EntityCultist.this.getVariant(); ++i)
             {
                 BlockPos blockpos = (new BlockPos(EntityCultist.this)).add(-4 + EntityCultist.this.rand.nextInt(8), 1, -4 + EntityCultist.this.rand.nextInt(8));
                 EntityCultist backup = new EntityCultist(EntityCultist.this.world);
