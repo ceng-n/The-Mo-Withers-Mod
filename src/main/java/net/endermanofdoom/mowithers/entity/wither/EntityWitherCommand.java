@@ -123,7 +123,7 @@ public class EntityWitherCommand extends EntityHostileWither
 	protected void initEntityAI()
     {
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
 	
     public boolean canDestroyBlock(BlockPos blockIn)
@@ -237,7 +237,7 @@ public class EntityWitherCommand extends EntityHostileWither
                     double d5 = entity.posZ - this.posZ;
                     
                     double d3 = d0 * d0 + d2 * d2 + d1 * d1;
-                    if (this.getRamTime() <= 55)
+                    if (this.getRamTime() >= -55)
             		renderYawOffset = rotationYaw = rotationYawHead = (float)(MathHelper.atan2(d5, d4) * (180D / Math.PI)) - 90.0F;
 
                     double d6 = (double)MathHelper.sqrt(d3);

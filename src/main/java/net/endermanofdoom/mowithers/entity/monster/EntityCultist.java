@@ -4,7 +4,11 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
+import net.endermanofdoom.mca.events.MCAWorldData;
 import net.endermanofdoom.mca.registrey.MCAItems;
+import net.endermanofdoom.mac.enums.EnumGender;
+import net.endermanofdoom.mac.interfaces.IBossBar;
+import net.endermanofdoom.mac.interfaces.IGendered;
 import net.endermanofdoom.mac.interfaces.IVariedMob;
 import net.endermanofdoom.mca.MinecraftAdventures;
 import net.endermanofdoom.mca.entity.IWitherMob;
@@ -36,7 +40,6 @@ import net.minecraft.entity.monster.EntitySpellcasterIllager;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -58,8 +61,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
-import net.minecraft.world.BossInfo;
-import net.minecraft.world.BossInfoServer;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
@@ -68,11 +69,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SuppressWarnings("deprecation")
-public class EntityCultist extends EntitySpellcasterIllager implements IVariedMob, IWitherMob
+public class EntityCultist extends EntitySpellcasterIllager implements IVariedMob, IWitherMob, IGendered, IBossBar
 {
     private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntityCultist.class, DataSerializers.BYTE);
     private static final DataParameter<Integer> VARIANT = EntityDataManager.<Integer>createKey(EntityCultist.class, DataSerializers.VARINT);
-    protected BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS));
     protected int shouldUseDynamicAI;
     protected int switchAI;
     
@@ -98,7 +98,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
         this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityPlayer.class, 3.0F, 1.0F));
         this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] {EntityCultist.class}));
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, MoWithers.NON_WITHER_OR_NETHER_MOB));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, MoWithers.NON_WITHER_OR_NETHER_MOB));
     }
 
     protected void applyEntityAttributes()
@@ -226,30 +226,6 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
 		default:
 	        this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.STONE_HOE));
 		}
-        
-        this.bossInfo.setPercent((float)(this.getHealth() / this.getMaxHealth()));
-        this.bossInfo.setName(this.getDisplayName());
-    }
-    
-    /**
-     * Add the given player to the list of players tracking this entity. For instance, a player may track a boss in
-     * order to view its associated boss bar.
-     */
-    public void addTrackingPlayer(EntityPlayerMP player)
-    {
-        super.addTrackingPlayer(player);
-        if (this.getVariant() > 1)
-        this.bossInfo.addPlayer(player);
-    }
-
-    /**
-     * Removes the given player from the list of players tracking this entity. See {@link Entity#addTrackingPlayer} for
-     * more information on tracking.
-     */
-    public void removeTrackingPlayer(EntityPlayerMP player)
-    {
-        super.removeTrackingPlayer(player);
-        this.bossInfo.removePlayer(player);
     }
 
     /**
@@ -645,7 +621,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
 	{
 		EnumDifficulty diff = world.getDifficulty();
 		
-		double hp = 300D;
+		double hp = 200D;
 		
 		if (diff == EnumDifficulty.NORMAL)
 			hp *= 1.5D;
@@ -781,6 +757,57 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
 	{
 		return getVariant() <= 1;
 	}
+
+	public EnumGender getGender() 
+	{
+		return EnumGender.MALE;
+	}
+	
+	@Override
+	public boolean canRenderBar()
+	{
+		return !this.isNonBoss();
+	}
+	
+	@Override
+	public double getBarHealth()
+	{
+		return getHealth();
+	}
+
+	@Override
+	public double getBarMaxHealth()
+	{
+		return getMaxHealth();
+	}
+
+	@Override
+	public String getBarName()
+	{
+		return getDisplayName().getFormattedText();
+	}
+
+	@Override
+	public boolean isDead()
+	{
+		return isDead;
+	}
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {255, 55, 200, 0, 0, 0};
+	}
+	
+    /**
+     * Called when the mob's health reaches 0.
+     */
+    public void onDeath(DamageSource cause)
+    {
+        if (!world.isRemote && getVariant() == 2)
+    	MCAWorldData.progress.setBoolean("killedCardinal", true);
+
+        super.onDeath(cause);
+    }
     
     class AIPhase2Spell extends EntitySpellcasterIllager.AIUseSpell
     {

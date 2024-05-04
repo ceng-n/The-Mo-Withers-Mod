@@ -244,4 +244,9 @@ public class EntityWitherPink extends EntityBaseWither
     {
         return rand.nextBoolean() ? Items.SUGAR : Item.getItemFromBlock(Blocks.RED_FLOWER);
     }
+    
+	public boolean canRenderBar()
+	{
+		return false;
+	}
 }

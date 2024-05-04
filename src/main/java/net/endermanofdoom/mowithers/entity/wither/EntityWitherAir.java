@@ -2,7 +2,6 @@ package net.endermanofdoom.mowithers.entity.wither;
 
 import java.util.List;
 import java.util.Random;
-import java.util.UUID;
 import javax.annotation.Nullable;
 
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
@@ -27,7 +26,6 @@ import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -52,7 +50,7 @@ public class EntityWitherAir extends EntityHostileWither
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
         this.targetTasks.addTask(0, new EntityAIWitherOwnerHurtByTarget(this));
         this.targetTasks.addTask(2, new EntityAIWitherOwnerHurtTarget(this));
     }
@@ -287,83 +285,9 @@ public class EntityWitherAir extends EntityHostileWither
         return rand.nextBoolean() ? Items.PAPER : Items.FEATHER;
     }
     
-	public boolean hasStamina()
-	{
-		return false;
-	}
-	
-	public boolean canRenderBar()
-	{
-		return !isInvisible() && !this.isDead;
-	}
-	
-	public boolean canShowDamage()
-	{
-		return true;
-	}
-	
-	public double getBarHealth()
-	{
-		return this.getWitherHealth();
-	}
-	
-	public double getBarMaxHealth()
-	{
-		return this.getMaxWitherHealth();
-	}
-	
-	public double getBarStamina()
-	{
-		return 0;
-	}
-	
-	public double getBarMaxStamina()
-	{
-		return 0;
-	}
-	
-	public UUID getUniqueBarID() 
-	{
-		return getUniqueID();
-	}
-
-	public String getBarName() 
-	{
-		return getName();
-	}
-	
-	protected void setStamina(double value) {}
-	
-	protected void setMaxStamina(double value) {}
-	
-	public double getStamina()
-	{
-		return 0;
-	}
-
-	public double getMaxStamina()
-	{
-		return 0;
-	}
-	
-	public int getNameBarStart() {return -2;}
-	
-	public int getHealthNameStart() {return 8;}
-	
-	public int getStaminaBarLength() {return 256;}
-	
-	public int getStaminaBarStart() {return 0;}
-	
-	public int getHealthBarLength() {return 256;}
-	
-	public ResourceLocation getBarTexture()
-	{
-		return new ResourceLocation(MoWithers.MODID, "textures/gui/bar_boss.png");
-	}
-    
 	public int[] getBarColor() 
 	{
-		return new int[] {255, 255, 255, 0, 0, 0};
+		return new int[] {255, 255, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
 	}
 
     static class AIRandomFly extends EntityAIBase

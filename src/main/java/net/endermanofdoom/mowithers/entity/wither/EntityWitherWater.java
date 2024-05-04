@@ -50,7 +50,7 @@ public class EntityWitherWater extends EntityHostileWither
         this.targetTasks.addTask(0, new EntityAIWitherOwnerHurtByTarget(this));
         this.targetTasks.addTask(2, new EntityAIWitherOwnerHurtTarget(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
 	
     public boolean canDestroyBlock(BlockPos blockIn)

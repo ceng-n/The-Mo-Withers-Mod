@@ -53,7 +53,7 @@ public class EntityWitherDragon extends EntityHostileWither
 	        }
 	    };
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
     public TextFormatting getNameColor()
@@ -227,7 +227,7 @@ public class EntityWitherDragon extends EntityHostileWither
               	if (this.world.getEntityByID(this.getWatchedTargetId(2)) == null && rand.nextInt(40) == 0)
               		this.updateWatchedTargetId(2, entity.getEntityId());
               	
-            	if (this.isArmored() && this.getRamTime() > 60)
+            	if (this.isArmored() && this.getRamTime() < -60)
             	{
                     float f = ticksExisted * (float)Math.PI * 0.05F;
         	        EntityWitherSkullShared entitywitherskull = new EntityWitherSkullShared(this.world, this, 0, 0, 0);
@@ -259,8 +259,8 @@ public class EntityWitherDragon extends EntityHostileWither
               }
         	}
         }        
-        this.noClip = getRamTime() > 60;
-        if (this.getRamTime() > 60)
+        this.noClip = getRamTime() < -60;
+        if (this.getRamTime() < -60)
         {
             List<Entity> list = this.world.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox().grow(8D * this.world.getDifficulty().getDifficultyId()));
             

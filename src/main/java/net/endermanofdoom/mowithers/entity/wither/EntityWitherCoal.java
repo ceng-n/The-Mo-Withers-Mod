@@ -31,7 +31,7 @@ public class EntityWitherCoal extends EntityHostileWither
 	protected void initEntityAI()
     {
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
@@ -128,4 +128,9 @@ public class EntityWitherCoal extends EntityHostileWither
     {
       return super.getSoundPitch() - 0.1F;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {40, 40, 40, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

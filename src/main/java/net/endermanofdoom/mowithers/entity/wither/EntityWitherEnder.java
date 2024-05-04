@@ -46,7 +46,7 @@ public class EntityWitherEnder extends EntityHostileWither
 	        }
 	    };
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
@@ -59,7 +59,7 @@ public class EntityWitherEnder extends EntityHostileWither
 		mob.onInitialSpawn(world.getDifficultyForLocation(getPosition()), null);
 		world.spawnEntity(mob);
 		mob.startRiding(skull);
-		mob.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(mob, EntityLivingBase.class, WITHERTARGETS));
+		mob.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(mob, EntityLivingBase.class, WITHERTARGETS));
         skull.setSkullTexture("wither/mob/wither_ender");
         skull.setMod(MoWithers.MODID);
     }
@@ -164,7 +164,7 @@ public class EntityWitherEnder extends EntityHostileWither
                 {
                 	EntityEnderman creepers = (EntityEnderman)entity;
                 	
-                	EntityAIWitherTargeting<EntityLivingBase> targeting = new EntityAIWitherTargeting<EntityLivingBase>(mob, EntityLivingBase.class, WITHERTARGETS);
+                	net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase> targeting = new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(mob, EntityLivingBase.class, WITHERTARGETS);
                 	
                 	if (creepers.getAttackTarget() != null && creepers.getAttackTarget() == this)
                 		creepers.setAttackTarget(null);

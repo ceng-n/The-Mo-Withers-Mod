@@ -48,7 +48,7 @@ public class EntityWitherBedrock extends EntityHostileWither
 	protected void initEntityAI()
     {
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
 	
     public boolean canDestroyBlock(BlockPos blockIn)
@@ -185,7 +185,7 @@ public class EntityWitherBedrock extends EntityHostileWither
                         double d5 = entity.posZ - this.posZ;
                         
                         double d3 = d0 * d0 + d2 * d2 + d1 * d1;
-                        if (this.getRamTime() <= 55)
+                        if (this.getRamTime() >= -55)
                 		renderYawOffset = rotationYaw = rotationYawHead = (float)(MathHelper.atan2(d5, d4) * (180D / Math.PI)) - 90.0F;
 
                         double d6 = (double)MathHelper.sqrt(d3);
@@ -483,6 +483,11 @@ public class EntityWitherBedrock extends EntityHostileWither
             this.world.spawnEntity(new EntityXPOrb(this.world, this.posX, this.posY + this.getEyeHeight(), this.posZ, i));
         }
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {55, 55, 55, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
     
     public boolean attackEntityFrom(DamageSource source, float amount)
     {

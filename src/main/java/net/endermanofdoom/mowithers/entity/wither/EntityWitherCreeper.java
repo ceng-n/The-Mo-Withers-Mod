@@ -76,7 +76,7 @@ public class EntityWitherCreeper extends EntityHostileWither
 	        }
 	    };
         super.initEntityAI();
-        this.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
+        this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
 	
     /**
@@ -197,7 +197,7 @@ public class EntityWitherCreeper extends EntityHostileWither
 		mob.onInitialSpawn(world.getDifficultyForLocation(getPosition()), null);
 		world.spawnEntity(mob);
 		mob.startRiding(skull);
-		mob.targetTasks.addTask(2, new EntityAIWitherTargeting<EntityLivingBase>(mob, EntityLivingBase.class, WITHERTARGETS));
+		mob.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(mob, EntityLivingBase.class, WITHERTARGETS));
 		if (this.getPowered())
 			mob.onStruckByLightning(null);
         skull.setSkullTexture("wither/mob/wither_creeper");
@@ -370,7 +370,7 @@ public class EntityWitherCreeper extends EntityHostileWither
                 {
                 	EntityCreeper creepers = (EntityCreeper)entity;
                 	
-                	EntityAIWitherTargeting<EntityLivingBase> targeting = new EntityAIWitherTargeting<EntityLivingBase>(mob, EntityLivingBase.class, WITHERTARGETS);
+                	net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase> targeting = new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(mob, EntityLivingBase.class, WITHERTARGETS);
                 	
                 	if (creepers.getAttackTarget() != null && creepers.getAttackTarget() == this)
                 		creepers.setAttackTarget(null);
@@ -415,4 +415,9 @@ public class EntityWitherCreeper extends EntityHostileWither
     {
       return super.getSoundPitch() - 0.4F;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {0, 255, 0, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }
