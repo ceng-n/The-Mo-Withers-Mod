@@ -11,6 +11,7 @@ import net.endermanofdoom.mowithers.registry.MSounds;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -124,7 +125,7 @@ public class EntityWitherAir extends EntityHostileWither
             	  this.getMoveHelper().setMoveTo(entity.posX, entity.posY, entity.posZ, this.getMobSpeed());
                   
             	if (!this.canEntityBeSeen(entity) && this.ticksExisted % 40 == 0)
-            		this.attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
+            		((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
             	
             	if (this.world.getEntityByID(this.getWatchedTargetId(1)) == null && rand.nextInt(40) == 0)
             		this.updateWatchedTargetId(1, entity.getEntityId());

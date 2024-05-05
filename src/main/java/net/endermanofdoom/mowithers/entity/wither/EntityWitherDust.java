@@ -13,6 +13,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -158,7 +159,7 @@ public class EntityWitherDust extends EntityHostileWither
             		this.updateWatchedTargetId(2, entity.getEntityId());
             	
             	if (!this.canEntityBeSeen(entity) && this.ticksExisted % 100 == 0)
-            		this.attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
+            		((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
             	
                 double d0 = entity.posX - this.posX;
                 double d1 = entity.posZ - this.posZ;

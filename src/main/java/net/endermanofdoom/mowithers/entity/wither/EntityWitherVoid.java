@@ -14,6 +14,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIWatchClosest2;
 import net.minecraft.entity.item.EntityItem;
@@ -233,7 +234,7 @@ public class EntityWitherVoid extends EntityHostileWither
               {
 
               	if (!this.canEntityBeSeen(entity) && this.ticksExisted % 120 == 0)
-              		this.attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
+              		((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase)entity, 0.0F);
               	
               	if (this.world.getEntityByID(this.getWatchedTargetId(1)) == null && rand.nextInt(40) == 0)
               		this.updateWatchedTargetId(1, entity.getEntityId());

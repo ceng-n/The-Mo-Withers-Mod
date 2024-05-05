@@ -15,6 +15,7 @@ import net.endermanofdoom.mowithers.registry.MSounds;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -194,17 +195,17 @@ public class EntityWitherBedrock extends EntityHostileWither
                         this.motionZ += (d1 / d6 * ramspeedmul - this.motionZ) * (getEntityAttribute(SharedMonsterAttributes.FLYING_SPEED).getBaseValue() * movereduc);
                         
                         if (this.ticksExisted % 20 == 0 && entity instanceof EntityLivingBase)
-                        	this.attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
+                        	((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
                         
                         if (this.ticksExisted % 40 == 0 && entity instanceof EntityLivingBase)
-                        	this.attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
+                        	((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
                         
                         if (this.ticksExisted % 60 == 0 && entity instanceof EntityLivingBase)
-                        	this.attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
+                        	((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
                         
                         if (this.ticksExisted % 100 == 0 && entity instanceof EntityLivingBase)
                         {
-                        	this.attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
+                        	((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
                         	this.launchWitherSkullToCoords(1, entity.posX, entity.posY, entity.posZ, false);
                         	this.launchWitherSkullToCoords(2, entity.posX, entity.posY, entity.posZ, false);
                         }
@@ -326,7 +327,7 @@ public class EntityWitherBedrock extends EntityHostileWither
               if (entity != null)
               {
               	if (!this.canEntityBeSeen(entity) && this.ticksExisted % 120 == 0)
-              		this.attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
+              		((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
               	
               	if (this.world.getEntityByID(this.getWatchedTargetId(1)) == null && rand.nextInt(40) == 0)
               		this.updateWatchedTargetId(1, entity.getEntityId());

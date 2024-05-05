@@ -12,6 +12,7 @@ import net.minecraft.command.*;
 import net.minecraft.command.server.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -248,7 +249,7 @@ public class EntityWitherCommand extends EntityHostileWither
                         this.motionZ += (d1 / d6 * ramspeedmul - this.motionZ) * (getEntityAttribute(SharedMonsterAttributes.FLYING_SPEED).getBaseValue() * movereduc);
                     }
                     if (this.ticksExisted % 20 == 0 && entity instanceof EntityLivingBase)
-                    	this.attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
+                    	((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase) entity, 0);
                 }
             }
     }
@@ -285,7 +286,7 @@ public class EntityWitherCommand extends EntityHostileWither
               if (entity != null)
               {
               	if (!this.canEntityBeSeen(entity) && this.ticksExisted % 120 == 0)
-              		this.attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
+              		((IRangedAttackMob)this).attackEntityWithRangedAttack((EntityLivingBase)entity, 0);
               	
               	if (this.world.getEntityByID(this.getWatchedTargetId(1)) == null && rand.nextInt(40) == 0)
               		this.updateWatchedTargetId(1, entity.getEntityId());
