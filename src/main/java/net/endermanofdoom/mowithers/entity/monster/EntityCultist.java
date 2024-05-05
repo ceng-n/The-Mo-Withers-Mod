@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
-import net.endermanofdoom.mca.events.MCAWorldData;
 import net.endermanofdoom.mca.registrey.MCAItems;
+import net.endermanofdoom.mca.world.MCAWorldData;
 import net.endermanofdoom.mac.enums.EnumGender;
 import net.endermanofdoom.mac.interfaces.IBossBar;
 import net.endermanofdoom.mac.interfaces.IGendered;
