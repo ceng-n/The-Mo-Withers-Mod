@@ -173,13 +173,13 @@ public class ItemWitherArmor extends ItemArmor
 		if (isWearingFullSet(player)) 
 		{
 			player.capabilities.setFlySpeed(0.05F * this.getArmorInt());
-			player.capabilities.allowFlying = player.getHealth() > player.getMaxHealth() / 2;
+			player.capabilities.allowFlying = player.getHealth() > player.getMaxHealth() / 2 || player.capabilities.disableDamage;
 			player.fallDistance = 0F;
 			if (!player.capabilities.isFlying && player.motionY < 0 && player.isSneaking())
 				player.motionY *= 0.95F;
 			player.jumpMovementFactor = player.moveStrafing != 0F ? 0.06F : 0.02F;
 			player.stepHeight = 1.5F;
-			if (player.capabilities.isFlying && player.getHealth() <= player.getMaxHealth() / 2)
+			if (player.capabilities.isFlying && player.getHealth() <= player.getMaxHealth() / 2 && !player.capabilities.disableDamage)
 				player.capabilities.isFlying = false;
 			if (player.capabilities.isFlying && player.moveForward == 0F && this.getArmorInt() >= 10)
 			{

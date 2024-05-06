@@ -26,11 +26,8 @@ public class MItems
 	public static final ArmorMaterial TIER_3_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier3Wither", MoWithers.MODID + ":entropic", 120000, new int[]{4, 7, 10, 4}, 22, SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, 20.0F);
 	public static final ArmorMaterial TIER_4_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier4Wither", MoWithers.MODID + ":reaper", Integer.MAX_VALUE, new int[]{30, 30, 30, 30}, 30, SoundEvents.BLOCK_CLOTH_PLACE, 80.0F);
 
-	public static final Item CHOCOLATE = new ItemFood(6, 0.2F, false).setCreativeTab(MoWithers.MO_TAB);
 	public static final Item NETHER_STAR_SHARD = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item NETHER_STAR_DUST = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
-	public static final Item WITHER_BONE = new Item().setCreativeTab(MoWithers.MO_TAB);
-	public static final Item WITHER_BONE_MEAL = new ItemWitherBonemeal();
 	public static final Item ATROPHIC_SHARD = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ATROPHIC_CRYSTAL = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ATROPHIC_SWORD = new ItemWitherSword(TIER_1_WITHER_TOOLS);
@@ -73,9 +70,6 @@ public class MItems
 		Items.NETHER_STAR.setCreativeTab(MoWithers.MO_TAB);
 		registerItem(NETHER_STAR_SHARD, "nether_star_shard");
 		registerItem(NETHER_STAR_DUST, "nether_star_dust");
-		registerItem(CHOCOLATE, "chocolate");
-		registerItem(WITHER_BONE, "wither_bone");
-		registerItem(WITHER_BONE_MEAL, "wither_bone_meal");
 		registerItem(ATROPHIC_SHARD, "atrophic_shard");
 		TIER_1_WITHER_TOOLS.setRepairItem(new ItemStack(ATROPHIC_SHARD));
 		TIER_1_WITHER_ARMOR.setRepairItem(new ItemStack(ATROPHIC_SHARD));
@@ -130,9 +124,6 @@ public class MItems
 	{
 		renderItem(NETHER_STAR_SHARD);
 		renderItem(NETHER_STAR_DUST);
-		renderItem(CHOCOLATE);
-		renderItem(WITHER_BONE);
-		renderItem(WITHER_BONE_MEAL);
 		renderItem(ATROPHIC_SHARD);
 		renderItem(ATROPHIC_CRYSTAL);
 		renderItem(ATROPHIC_SWORD);

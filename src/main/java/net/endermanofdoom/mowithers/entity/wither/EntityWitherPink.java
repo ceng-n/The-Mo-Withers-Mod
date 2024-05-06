@@ -9,9 +9,9 @@ import net.endermanofdoom.mca.entity.boss.EntityBaseWither;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.EnumWitherType;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
+import net.endermanofdoom.mca.registrey.MCAItems;
 import net.endermanofdoom.mca.MinecraftAdventures;
 import net.endermanofdoom.mowithers.MoWithers;
-import net.endermanofdoom.mowithers.registry.MItems;
 import net.endermanofdoom.mowithers.registry.MSounds;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -109,7 +109,7 @@ public class EntityWitherPink extends EntityBaseWither
     {
         ItemStack itemstack = player.getHeldItem(hand);
 
-        if (!this.isTamed() && itemstack.getItem() == MItems.CHOCOLATE)
+        if (!this.isTamed() && itemstack.getItem() == MCAItems.CHOCOLATE)
         {
             if (!this.world.isRemote && !this.isTamed())
             {

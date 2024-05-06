@@ -619,34 +619,26 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
 
 	public double getMobHealth() 
 	{
-		EnumDifficulty diff = world.getDifficulty();
-		
-		double hp = 200D;
-		
-		if (diff == EnumDifficulty.NORMAL)
-			hp *= 1.5D;
-		
-		if (diff == EnumDifficulty.HARD)
-			hp *= 2D;
+		double hp = MinecraftAdventures.caclculateValue(world, 40D);
 		
 		switch (this.getVariant())
 		{
 		case 1:
-			return 100D;
-		case 2:
-			return hp;
-		case 3:
 			return hp * 2;
-		case 4:
+		case 2:
+			return hp * 3;
+		case 3:
 			return hp * 6;
-		case 5:
+		case 4:
 			return hp * 12;
+		case 5:
+			return hp * 24;
 		case 6:
-			return hp * 20;
-		case 7:
 			return hp * 40;
+		case 7:
+			return hp * 80;
 		default:
-			return 30D;
+			return hp;
 		}
 	}
 	
