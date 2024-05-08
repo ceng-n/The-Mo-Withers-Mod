@@ -52,9 +52,9 @@ public class ItemWitherArmor extends ItemArmor
 		case 2:
 			return EnumRarity.EPIC;
 		case 5:
-			return net.endermanofdoom.mca.MinecraftAdventures.SUPER_EPIC;
+			return net.endermanofdoom.mca.MCA.SUPER_EPIC;
 		case 10:
-			return net.endermanofdoom.mca.MinecraftAdventures.LEGENDARY;
+			return net.endermanofdoom.mca.MCA.LEGENDARY;
 		default:
 			return EnumRarity.RARE;
 		}

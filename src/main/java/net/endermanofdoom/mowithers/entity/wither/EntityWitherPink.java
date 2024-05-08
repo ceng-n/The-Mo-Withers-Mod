@@ -10,7 +10,7 @@ import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.EnumWitherType;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import net.endermanofdoom.mca.registrey.MCAItems;
-import net.endermanofdoom.mca.MinecraftAdventures;
+import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mowithers.MoWithers;
 import net.endermanofdoom.mowithers.registry.MSounds;
 import net.minecraft.entity.Entity;
@@ -205,8 +205,8 @@ public class EntityWitherPink extends EntityBaseWither
         	
             if (rand.nextInt(400) == 0)
             {
-    	         MinecraftAdventures.instantGrow(world, this.getPosition(), rand);
-    	         MinecraftAdventures.instantGrow(world, this.getPosition().down(), rand);
+    	         MCA.instantGrow(world, this.getPosition(), rand);
+    	         MCA.instantGrow(world, this.getPosition().down(), rand);
             }
         	
             List<Entity> list = this.world.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox().grow(24D));

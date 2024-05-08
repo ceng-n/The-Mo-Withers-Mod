@@ -2,7 +2,7 @@ package net.endermanofdoom.mowithers;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.endermanofdoom.mca.MinecraftAdventures;
+import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mowithers.events.MEvents;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -45,7 +45,7 @@ public class MoWithers
     {
         public boolean apply(@Nullable Entity p_apply_1_)
         {
-            return p_apply_1_ instanceof EntityLivingBase && !MinecraftAdventures.isWitherMob((EntityLivingBase)p_apply_1_) && !MinecraftAdventures.isNetherMob((EntityLivingBase)p_apply_1_) && ((EntityLivingBase)p_apply_1_).attackable();
+            return p_apply_1_ instanceof EntityLivingBase && !MCA.isWitherMob((EntityLivingBase)p_apply_1_) && !MCA.isNetherMob((EntityLivingBase)p_apply_1_) && ((EntityLivingBase)p_apply_1_).attackable();
         }
     };
     

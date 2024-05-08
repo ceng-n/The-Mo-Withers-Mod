@@ -10,7 +10,7 @@ import net.endermanofdoom.mac.enums.EnumGender;
 import net.endermanofdoom.mac.interfaces.IBossBar;
 import net.endermanofdoom.mac.interfaces.IGendered;
 import net.endermanofdoom.mac.interfaces.IVariedMob;
-import net.endermanofdoom.mca.MinecraftAdventures;
+import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mca.entity.IWitherMob;
 import net.endermanofdoom.mca.entity.boss.*;
 import net.endermanofdoom.mowithers.MoWithers;
@@ -172,7 +172,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
                 	((EntityLivingBase) entity).playSound(SoundEvents.ENTITY_ZOMBIE_VILLAGER_CONVERTED, 0.25F, 2F);
                 	this.playLivingSound();
                 	this.getNavigator().getPathToEntityLiving((EntityLivingBase) entity);
-                    if (!entity.isEntityAlive() && !MinecraftAdventures.isWitherMob((EntityLivingBase) entity))
+                    if (!entity.isEntityAlive() && !MCA.isWitherMob((EntityLivingBase) entity))
                     	this.onKillEntity((EntityLivingBase) entity);
                 }
             }
@@ -361,7 +361,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
         skull.posX = d0;
         skull.posZ = d2;
         skull.noClip = true;
-        skull.setMod(MinecraftAdventures.MODID);
+        skull.setMod(MCA.MODID);
         skull.setSkullTexture("boss/wither");
         skull.setDeflect(true);
         this.world.spawnEntity(skull);
@@ -447,7 +447,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
         {
             return true;
         }
-        else if (entityIn instanceof EntityLivingBase && MinecraftAdventures.isWitherMob((EntityLivingBase)entityIn))
+        else if (entityIn instanceof EntityLivingBase && MCA.isWitherMob((EntityLivingBase)entityIn))
         {
             return true;
         }
@@ -474,7 +474,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
         }
         else
         {
-        	if (source.getTrueSource() != null && source.getTrueSource() instanceof EntityLivingBase && MinecraftAdventures.isWitherMob((EntityLivingBase)source.getTrueSource()))
+        	if (source.getTrueSource() != null && source.getTrueSource() instanceof EntityLivingBase && MCA.isWitherMob((EntityLivingBase)source.getTrueSource()))
         		return false;
         	
         	return super.attackEntityFrom(source, amount);
@@ -619,7 +619,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
 
 	public double getMobHealth() 
 	{
-		double hp = MinecraftAdventures.caclculateValue(world, 40D);
+		double hp = MCA.caclculateValue(world, 40D);
 		
 		switch (this.getVariant())
 		{
@@ -705,13 +705,13 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
     		case 1:
                 return I18n.translateToLocal("entity.cultist_greater.name");
     		case 2:
-                return TextFormatting.AQUA + (hasCustomName() ? getCustomNameTag() : I18n.translateToLocal("entity.cultist_leader.name")) + TextFormatting.WHITE + " " + MinecraftAdventures.parseFloat(getHealth() + this.getAbsorptionAmount());
+                return TextFormatting.AQUA + (hasCustomName() ? getCustomNameTag() : I18n.translateToLocal("entity.cultist_leader.name")) + TextFormatting.WHITE + " " + MCA.parseFloat(getHealth() + this.getAbsorptionAmount());
     		case 3:
     		case 4:
     		case 5:
     		case 6:
     		case 7:
-                return TextFormatting.LIGHT_PURPLE + (hasCustomName() ? getCustomNameTag() : I18n.translateToLocal("entity.cultist_leader_sec.name")) + TextFormatting.WHITE + " " + MinecraftAdventures.parseFloat(getHealth() + this.getAbsorptionAmount());
+                return TextFormatting.LIGHT_PURPLE + (hasCustomName() ? getCustomNameTag() : I18n.translateToLocal("entity.cultist_leader_sec.name")) + TextFormatting.WHITE + " " + MCA.parseFloat(getHealth() + this.getAbsorptionAmount());
     		default:
                 return I18n.translateToLocal("entity.cultist_lesser.name");
     		}

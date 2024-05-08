@@ -31,7 +31,7 @@ public class ItemWitherPickaxe extends ItemPickaxe
 	
 	public EnumRarity getRarity(ItemStack stack)
 	{
-		return getToolMaterialName() == "Tier3Wither" ? net.endermanofdoom.mca.MinecraftAdventures.SUPER_EPIC : getToolMaterialName() == "Tier2Wither" ? EnumRarity.EPIC : EnumRarity.RARE;
+		return getToolMaterialName() == "Tier3Wither" ? net.endermanofdoom.mca.MCA.SUPER_EPIC : getToolMaterialName() == "Tier2Wither" ? EnumRarity.EPIC : EnumRarity.RARE;
 	}
 	
     @SideOnly(Side.CLIENT)

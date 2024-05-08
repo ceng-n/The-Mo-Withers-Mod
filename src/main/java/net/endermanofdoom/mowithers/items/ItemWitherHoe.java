@@ -39,7 +39,7 @@ public class ItemWitherHoe extends ItemHoe
 	
 	public EnumRarity getRarity(ItemStack stack)
 	{
-		return getMaterialName() == "Tier3Wither" ? net.endermanofdoom.mca.MinecraftAdventures.SUPER_EPIC : getMaterialName() == "Tier2Wither" ? EnumRarity.EPIC : EnumRarity.RARE;
+		return getMaterialName() == "Tier3Wither" ? net.endermanofdoom.mca.MCA.SUPER_EPIC : getMaterialName() == "Tier2Wither" ? EnumRarity.EPIC : EnumRarity.RARE;
 	}
 	
     @SideOnly(Side.CLIENT)

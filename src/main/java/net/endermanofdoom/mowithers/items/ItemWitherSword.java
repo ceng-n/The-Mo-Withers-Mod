@@ -1,6 +1,6 @@
 package net.endermanofdoom.mowithers.items;
 
-import net.endermanofdoom.mca.MinecraftAdventures;
+import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import net.endermanofdoom.mowithers.MoWithers;
 import net.minecraft.entity.EntityLivingBase;
@@ -63,7 +63,7 @@ public class ItemWitherSword extends ItemSword
 	      entitywitherskull.setRadius(getToolMaterialName() == "Tier3Wither" ? 7F : getToolMaterialName() == "Tier2Wither" ? 3F : 1F);
 	      entitywitherskull.setSkullSize(0.5F);
 	      entitywitherskull.playSound(SoundEvents.ENTITY_WITHER_SHOOT, 1F, 1F);
-	      entitywitherskull.setMod(MinecraftAdventures.MODID);
+	      entitywitherskull.setMod(MCA.MODID);
 	      entitywitherskull.setSkullTexture("boss/wither");
 	      if (!worldIn.isRemote)
 	      {
@@ -76,7 +76,7 @@ public class ItemWitherSword extends ItemSword
 	
 	public EnumRarity getRarity(ItemStack stack)
 	{
-		return getToolMaterialName() == "Tier3Wither" ? net.endermanofdoom.mca.MinecraftAdventures.SUPER_EPIC : getToolMaterialName() == "Tier2Wither" ? EnumRarity.EPIC : EnumRarity.RARE;
+		return getToolMaterialName() == "Tier3Wither" ? net.endermanofdoom.mca.MCA.SUPER_EPIC : getToolMaterialName() == "Tier2Wither" ? EnumRarity.EPIC : EnumRarity.RARE;
 	}
 	
     @SideOnly(Side.CLIENT)
