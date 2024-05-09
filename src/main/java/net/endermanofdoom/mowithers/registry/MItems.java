@@ -17,9 +17,9 @@ import net.minecraftforge.registries.GameData;
 
 public class MItems 
 {
-	public static final ToolMaterial TIER_1_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier1Wither", 4, 4683, 16.0F, 26.0F, 16);
-	public static final ToolMaterial TIER_2_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier2Wither", 9, 85350, 32.0F, 196.0F, 22);
-	public static final ToolMaterial TIER_3_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier3Wither", 99, 7567500, 120.0F, 24996.0F, 26);
+	public static final ToolMaterial TIER_1_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier1Wither", 4, 4683, 16.0F, 76.0F, 16);
+	public static final ToolMaterial TIER_2_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier2Wither", 9, 85350, 32.0F, 796.0F, 22);
+	public static final ToolMaterial TIER_3_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier3Wither", 99, 7567500, 120.0F, 79996.0F, 26);
 	
 	public static final ArmorMaterial TIER_1_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier1Wither", MoWithers.MODID + ":atrophic", 162, new int[]{3, 7, 8, 4}, 16, SoundEvents.BLOCK_CHORUS_FLOWER_GROW, 4.0F);
 	public static final ArmorMaterial TIER_2_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier2Wither", MoWithers.MODID + ":necrotic", 2468, new int[]{3, 7, 9, 4}, 20, SoundEvents.BLOCK_SHULKER_BOX_OPEN, 10.0F);
@@ -31,7 +31,7 @@ public class MItems
 	public static final Item ATROPHIC_SHARD = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ATROPHIC_CRYSTAL = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ATROPHIC_SWORD = new ItemWitherSword(TIER_1_WITHER_TOOLS);
-	public static final Item ATROPHIC_AXE = new ItemWitherAxe(TIER_1_WITHER_TOOLS, 60F, -3F);
+	public static final Item ATROPHIC_AXE = new ItemWitherAxe(TIER_1_WITHER_TOOLS, 120F, -3F);
 	public static final Item ATROPHIC_PICKAXE = new ItemWitherPickaxe(TIER_1_WITHER_TOOLS);
 	public static final Item ATROPHIC_SHOVEL = new ItemWitherShovel(TIER_1_WITHER_TOOLS);
 	public static final Item ATROPHIC_HOE = new ItemWitherHoe(TIER_1_WITHER_TOOLS);
@@ -41,7 +41,7 @@ public class MItems
 	public static final Item ATROPHIC_BOOTS = new ItemWitherArmor(TIER_1_WITHER_ARMOR, 1, EntityEquipmentSlot.FEET, 10D, 2D);
 	public static final Item NECROTIC_STAR = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item NECROTIC_SWORD = new ItemWitherSword(TIER_2_WITHER_TOOLS);
-	public static final Item NECROTIC_AXE = new ItemWitherAxe(TIER_2_WITHER_TOOLS, 400F, -2.75F);
+	public static final Item NECROTIC_AXE = new ItemWitherAxe(TIER_2_WITHER_TOOLS, 1200F, -2.75F);
 	public static final Item NECROTIC_PICKAXE = new ItemWitherPickaxe(TIER_2_WITHER_TOOLS);
 	public static final Item NECROTIC_SHOVEL = new ItemWitherShovel(TIER_2_WITHER_TOOLS);
 	public static final Item NECROTIC_HOE = new ItemWitherHoe(TIER_2_WITHER_TOOLS);
@@ -52,7 +52,7 @@ public class MItems
 	public static final Item ENTROPIC_MATTER_UNSTABLE = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ENTROPIC_MATTER_STABLE = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ENTROPIC_SWORD = new ItemWitherSword(TIER_3_WITHER_TOOLS);
-	public static final Item ENTROPIC_AXE = new ItemWitherAxe(TIER_3_WITHER_TOOLS, 75000F, -2F);
+	public static final Item ENTROPIC_AXE = new ItemWitherAxe(TIER_3_WITHER_TOOLS, 120000F, -2F);
 	public static final Item ENTROPIC_PICKAXE = new ItemWitherPickaxe(TIER_3_WITHER_TOOLS);
 	public static final Item ENTROPIC_SHOVEL = new ItemWitherShovel(TIER_3_WITHER_TOOLS);
 	public static final Item ENTROPIC_HOE = new ItemWitherHoe(TIER_3_WITHER_TOOLS);

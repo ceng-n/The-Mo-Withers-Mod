@@ -107,7 +107,7 @@ public class EntityWitherDragon extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 60000D;
+		return super.getMobHealth() * 1200000D;
 	}
 
 	public double getMobAttack() 

@@ -115,7 +115,7 @@ public class EntityWitherVoid extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 30000D;
+		return super.getMobHealth() * 600000D;
 	}
 
 	public double getMobAttack() 
