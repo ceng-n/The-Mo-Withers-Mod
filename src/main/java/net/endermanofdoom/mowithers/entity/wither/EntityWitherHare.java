@@ -82,4 +82,9 @@ public class EntityWitherHare extends EntityHostileWither
     {
         return EnumWitherType.MOB;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {255, 100, 100, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

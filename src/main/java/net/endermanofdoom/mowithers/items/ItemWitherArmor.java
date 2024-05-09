@@ -6,6 +6,8 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.Multimap;
+
+import net.endermanofdoom.mca.registrey.MCAPotions;
 import net.endermanofdoom.mowithers.MoWithers;
 import net.endermanofdoom.mowithers.registry.MItems;
 import net.minecraft.client.util.ITooltipFlag;
@@ -103,7 +105,7 @@ public class ItemWitherArmor extends ItemArmor
 			player.heal(this.getArmorInt());
 			player.getFoodStats().addStats(1, 1);
 			if (player.getAbsorptionAmount() < player.getMaxHealth())
-				player.setAbsorptionAmount(this.getArmorInt());
+				player.setAbsorptionAmount(player.getAbsorptionAmount() + this.getArmorInt());
 		}
 		
 		if (this.getArmorInt() > 2 && this.getDamage(itemstack) > 0)
@@ -119,6 +121,8 @@ public class ItemWitherArmor extends ItemArmor
 		
 		player.removePotionEffect(MobEffects.WITHER);
 		player.removePotionEffect(MobEffects.POISON);
+		player.removePotionEffect(MCAPotions.BLEEDING);
+		player.removePotionEffect(MCAPotions.VENOM);
 		player.extinguish();
 		
 		if (this.getArmorInt() >= 10 && !itemstack.isItemEnchanted())

@@ -129,4 +129,9 @@ public class EntityWitherEmerald extends EntityHostileWither
     {
       return super.getSoundPitch() - 0.2F;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {0, 200, 50, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

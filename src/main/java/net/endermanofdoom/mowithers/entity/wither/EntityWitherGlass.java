@@ -133,4 +133,9 @@ public class EntityWitherGlass extends EntityHostileWither
     {
       return super.getSoundPitch() - 0.1F;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {126, 190, 204, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

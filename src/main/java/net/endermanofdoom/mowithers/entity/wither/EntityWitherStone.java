@@ -127,4 +127,9 @@ public class EntityWitherStone extends EntityHostileWither
     {
         return Item.getItemFromBlock(Blocks.STONE);
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {122, 122, 122, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

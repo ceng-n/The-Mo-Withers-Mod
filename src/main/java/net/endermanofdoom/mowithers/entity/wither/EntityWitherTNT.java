@@ -147,4 +147,9 @@ public class EntityWitherTNT extends EntityHostileWither
     {
       return super.getSoundPitch() - 0.25F;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {255, 50, 50, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

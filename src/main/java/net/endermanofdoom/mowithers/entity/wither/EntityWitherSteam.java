@@ -183,4 +183,9 @@ public class EntityWitherSteam extends EntityHostileWither
     {
         return rand.nextBoolean() ? Items.FEATHER : Items.CLAY_BALL;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {255, 255, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

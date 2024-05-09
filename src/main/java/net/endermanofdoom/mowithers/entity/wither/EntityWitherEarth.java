@@ -202,6 +202,6 @@ public class EntityWitherEarth extends EntityHostileWither
     
 	public int[] getBarColor() 
 	{
-		return new int[] {255, 255, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+		return new int[] {180, 123, 0, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
 	}
 }

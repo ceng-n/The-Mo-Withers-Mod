@@ -409,4 +409,9 @@ public class EntityWitherDragon extends EntityHostileWither
 	{
 		return EnumLevel.LORD;
 	}
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {100, 255, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

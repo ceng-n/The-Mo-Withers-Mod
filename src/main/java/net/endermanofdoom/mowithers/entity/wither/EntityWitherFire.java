@@ -207,4 +207,9 @@ public class EntityWitherFire extends EntityHostileWither
     	
     	return super.isOnSameTeam(friend);
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {255, 0, 0, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

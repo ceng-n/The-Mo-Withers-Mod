@@ -393,4 +393,9 @@ public class EntityWitherVoid extends EntityHostileWither
 	{
 		return EnumLevel.TEMPLAR;
 	}
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {0, 0, 0, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

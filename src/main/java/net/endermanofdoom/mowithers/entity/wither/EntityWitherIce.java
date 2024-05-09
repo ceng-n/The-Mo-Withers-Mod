@@ -249,4 +249,9 @@ public class EntityWitherIce extends EntityHostileWither
     {
         return rand.nextBoolean() ? Item.getItemFromBlock(Blocks.PACKED_ICE) : Item.getItemFromBlock(Blocks.ICE);
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {165, 207, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

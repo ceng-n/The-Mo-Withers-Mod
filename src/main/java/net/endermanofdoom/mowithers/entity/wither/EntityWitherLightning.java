@@ -177,4 +177,9 @@ public class EntityWitherLightning extends EntityHostileWither
     {
         return rand.nextBoolean() ? Item.getItemFromBlock(Blocks.END_ROD) : Items.BLAZE_ROD;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {233, 233, 0, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

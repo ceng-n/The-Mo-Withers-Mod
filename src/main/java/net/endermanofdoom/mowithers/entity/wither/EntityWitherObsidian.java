@@ -122,4 +122,9 @@ public class EntityWitherObsidian extends EntityHostileWither
     {
         return Item.getItemFromBlock(Blocks.OBSIDIAN);
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {35, 0, 50, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

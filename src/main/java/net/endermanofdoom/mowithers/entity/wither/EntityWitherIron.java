@@ -127,4 +127,9 @@ public class EntityWitherIron extends EntityHostileWither
     {
       return super.getSoundPitch() - 0.125F;
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {214, 214, 214, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

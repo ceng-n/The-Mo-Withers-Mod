@@ -127,4 +127,9 @@ public class EntityWitherSand extends EntityHostileWither
     {
         return rand.nextBoolean() ? Item.getItemFromBlock(Blocks.SANDSTONE) : Item.getItemFromBlock(Blocks.SAND);
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {225, 200, 0, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

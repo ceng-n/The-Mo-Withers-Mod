@@ -40,7 +40,6 @@ public class EntityWitherWater extends EntityHostileWither
         this.tasks.removeTask(new EntityAISwimming(this));
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void initEntityAI()
     {
         this.tasks.addTask(3, new EntityAIWitherShoot(this));
@@ -246,4 +245,9 @@ public class EntityWitherWater extends EntityHostileWither
     	
     	return super.isOnSameTeam(friend);
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {0, 0, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }

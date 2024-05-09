@@ -112,4 +112,9 @@ public class EntityWitherPattyDay extends EntityHostileWither
     {
         return p_82213_1_ >= 3 ? this.posZ : super.getHeadZ(p_82213_1_);
     }
+    
+	public int[] getBarColor() 
+	{
+		return new int[] {15, 200, 0, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+	}
 }
