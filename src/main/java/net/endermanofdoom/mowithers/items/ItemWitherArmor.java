@@ -231,7 +231,7 @@ public class ItemWitherArmor extends ItemArmor
 
 	private void effectPlayer(EntityPlayer player, Potion potion, int amplifier) 
 	{
-		player.addPotionEffect(new PotionEffect(potion, 2, amplifier, true, false));
+		player.addPotionEffect(new PotionEffect(potion, potion.equals(MobEffects.NIGHT_VISION) ? 500 : 2, amplifier, true, false));
 	}
 	
     @SuppressWarnings("deprecation")
