@@ -87,7 +87,7 @@ public class EntityWitherBedrock extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 800000D;
+		return super.getMobHealth() * 80000D;
 	}
     
     public boolean isSuperBoss()

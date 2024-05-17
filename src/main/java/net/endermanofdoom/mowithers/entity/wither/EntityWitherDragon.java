@@ -107,7 +107,7 @@ public class EntityWitherDragon extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 1200000D;
+		return super.getMobHealth() * 90000D;
 	}
 
 	public double getMobAttack() 
@@ -197,11 +197,7 @@ public class EntityWitherDragon extends EntityHostileWither
         this.setHealth(this.getMaxHealth() / 99.0F);
     }
     
-    public void onHealUpdate()
-    {
-        this.heal(20D);
-        super.onHealUpdate();
-    }
+    public void onHealUpdate() {}
     
     public void onLivingUpdate()
     {

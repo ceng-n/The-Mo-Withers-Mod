@@ -115,7 +115,7 @@ public class EntityWitherVoid extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 600000D;
+		return super.getMobHealth() * 60000D;
 	}
 
 	public double getMobAttack() 
@@ -172,10 +172,7 @@ public class EntityWitherVoid extends EntityHostileWither
         this.setHealth(this.getMaxHealth() / 99.0F);
     }
     
-    public void onHealUpdate()
-    {
-        this.heal(2D);
-    }
+    public void onHealUpdate() {}
     
     public void onLivingUpdate()
     {
@@ -196,7 +193,7 @@ public class EntityWitherVoid extends EntityHostileWither
                 {
                 	entity.attackEntityFrom(DamageSource.OUT_OF_WORLD, 4.0F);
                 }
-                else
+                else if (entity.isNonBoss())
             	{
             		world.removeEntity(entity);
             		consume(this, entity);
