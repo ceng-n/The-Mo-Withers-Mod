@@ -167,7 +167,7 @@ public class EntityWitherCommand extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 4000000D;
+		return super.getMobHealth() * 400000D;
 	}
     
     public boolean isSuperBoss()
