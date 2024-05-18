@@ -1,6 +1,7 @@
 package net.endermanofdoom.mowithers.blocks;
 
 import net.endermanofdoom.mowithers.MoWithers;
+import net.endermanofdoom.mowithers.registry.MBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -13,15 +14,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockStarBlock extends Block
 {
-    public BlockStarBlock()
+    public BlockStarBlock(MBlocks registry)
     {
         super(Material.IRON);
         setHardness(9.0F);
         setResistance(6000001.0F);
-        setCreativeTab(MoWithers.MO_TAB);
         setLightLevel(1F);
 		setHarvestLevel("pickaxe", 3);
 		setSoundType(SoundType.METAL);
+		registry.addBlock("nether_star_block", this, MoWithers.MO_TAB);
     }
 
     @SideOnly(Side.CLIENT)

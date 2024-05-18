@@ -221,7 +221,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
 		case 5:
 		case 6:
 		case 7:
-	        this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(MCAItems.NETHERITE_SET[4]));
+	        this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(MCAItems.getTools("netherite")[3]));
 	        break;
 		default:
 	        this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.STONE_HOE));

@@ -4,6 +4,9 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mowithers.events.MEvents;
+import net.endermanofdoom.mowithers.registry.MBlocks;
+import net.endermanofdoom.mowithers.registry.MItems;
+import net.minecraft.AgeOfMinecraft.EngenderConfig;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -21,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.google.common.base.Predicate;
 
-@Mod(modid = MoWithers.MODID, name = MoWithers.MODNAME, version = MoWithers.VERSION)
+@Mod(modid = MoWithers.MODID, name = MoWithers.MODNAME, version = MoWithers.VERSION, dependencies="required-after:mac@[2.5,)")
 public class MoWithers
 {
 	public static final String MODNAME = "Mo' Withers";
@@ -54,6 +57,10 @@ public class MoWithers
     {
         logger = e.getModLog();
 		logger.info("Started The Mo' Withers Mod!");
+		MBlocks.INSTANCE.init();
+		MItems.INSTANCE.init();
+		MinecraftForge.EVENT_BUS.register(this);
+		MinecraftForge.EVENT_BUS.register(new MEvents());
 		proxy.preInit(e);
     }
 
@@ -67,8 +74,50 @@ public class MoWithers
 	public void postInit(FMLPostInitializationEvent e)
 	{
 		proxy.postInit(e);
-		MinecraftForge.EVENT_BUS.register(this);
-		MinecraftForge.EVENT_BUS.register(new MEvents());
 		logger.info("Finished The Mo' Withers Mod!");
+	}
+
+	public static void info(Object message)
+	{
+		logger.info(message);
+	}
+	
+	public static void debug(Object message)
+	{
+		if (EngenderConfig.debugMode)
+			logger.info("[DEBUG] " + message);
+	}
+	
+	public static void warn(Object message)
+	{
+		if (EngenderConfig.debugMode)
+			logger.warn(message);
+	}
+
+	public static void error(Object message)
+	{
+		if (EngenderConfig.debugMode)
+		{
+			Throwable exception;
+			
+				if (message instanceof Throwable)
+					exception = (Throwable) message;
+				else
+					exception = new Exception(String.valueOf(message));
+
+				exception.printStackTrace();
+		}
+	}
+	
+	public static void fatal(Object message)
+	{
+		Error error;
+		
+		if (message instanceof Error)
+			error = (Error) message;
+		else
+			error = new Error(String.valueOf(message));
+		
+		throw error;
 	}
 }

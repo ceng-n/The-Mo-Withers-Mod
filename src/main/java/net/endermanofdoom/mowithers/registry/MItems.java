@@ -1,9 +1,8 @@
 package net.endermanofdoom.mowithers.registry;
 
+import net.endermanofdoom.mac.registry.AbstractItemRegistry;
 import net.endermanofdoom.mowithers.MoWithers;
 import net.endermanofdoom.mowithers.items.*;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -11,12 +10,10 @@ import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.registries.GameData;
 
-public class MItems 
+public class MItems extends AbstractItemRegistry
 {
+	public static final MItems INSTANCE = new MItems(MoWithers.MODID);
 	public static final ToolMaterial TIER_1_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier1Wither", 4, 4683, 16.0F, 76.0F, 16);
 	public static final ToolMaterial TIER_2_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier2Wither", 9, 85350, 32.0F, 796.0F, 22);
 	public static final ToolMaterial TIER_3_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier3Wither", 99, 7567500, 120.0F, 79996.0F, 26);
@@ -64,113 +61,65 @@ public class MItems
 	public static final Item REAPER_CLOAK = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 1, EntityEquipmentSlot.CHEST, 8000000D, 4000D);
 	public static final Item REAPER_TROUSERS = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 2, EntityEquipmentSlot.LEGS, 8000000D, 4000D);
 	public static final Item REAPER_SHOES = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 1, EntityEquipmentSlot.FEET, 8000000D, 4000D);
-	
-	public static void registerItems()
+
+	private MItems(String modid)
+	{
+		super(modid);
+	}
+
+	@Override
+	public void init()
 	{
 		Items.NETHER_STAR.setCreativeTab(MoWithers.MO_TAB);
-		registerItem(NETHER_STAR_SHARD, "nether_star_shard");
-		registerItem(NETHER_STAR_DUST, "nether_star_dust");
-		registerItem(ATROPHIC_SHARD, "atrophic_shard");
 		TIER_1_WITHER_TOOLS.setRepairItem(new ItemStack(ATROPHIC_SHARD));
 		TIER_1_WITHER_ARMOR.setRepairItem(new ItemStack(ATROPHIC_SHARD));
-		registerItem(ATROPHIC_CRYSTAL, "atrophic_crystal");
-		registerItem(ATROPHIC_SWORD, "atrophic_sword");
-		registerItem(ATROPHIC_AXE, "atrophic_axe");
-		registerItem(ATROPHIC_PICKAXE, "atrophic_pickaxe");
-		registerItem(ATROPHIC_SHOVEL, "atrophic_shovel");
-		registerItem(ATROPHIC_HOE, "atrophic_hoe");
-		registerItem(ATROPHIC_HELMET, "atrophic_helmet");
-		registerItem(ATROPHIC_CHESTPLATE, "atrophic_chestplate");
-		registerItem(ATROPHIC_LEGGINGS, "atrophic_leggings");
-		registerItem(ATROPHIC_BOOTS, "atrophic_boots");
 		TIER_2_WITHER_TOOLS.setRepairItem(new ItemStack(ATROPHIC_CRYSTAL));
 		TIER_2_WITHER_ARMOR.setRepairItem(new ItemStack(ATROPHIC_CRYSTAL));
-		registerItem(NECROTIC_STAR, "necrotic_star");
-		registerItem(NECROTIC_SWORD, "necrotic_sword");
-		registerItem(NECROTIC_AXE, "necrotic_axe");
-		registerItem(NECROTIC_PICKAXE, "necrotic_pickaxe");
-		registerItem(NECROTIC_SHOVEL, "necrotic_shovel");
-		registerItem(NECROTIC_HOE, "necrotic_hoe");
-		registerItem(NECROTIC_HELMET, "necrotic_helmet");
-		registerItem(NECROTIC_CHESTPLATE, "necrotic_chestplate");
-		registerItem(NECROTIC_LEGGINGS, "necrotic_leggings");
-		registerItem(NECROTIC_BOOTS, "necrotic_boots");
 		TIER_3_WITHER_TOOLS.setRepairItem(new ItemStack(NECROTIC_STAR));
 		TIER_3_WITHER_ARMOR.setRepairItem(new ItemStack(NECROTIC_STAR));
-		registerItem(ENTROPIC_MATTER_UNSTABLE, "entropic_matter_unstable");
-		registerItem(ENTROPIC_MATTER_STABLE, "entropic_matter");
-		registerItem(ENTROPIC_SWORD, "entropic_sword");
-		registerItem(ENTROPIC_AXE, "entropic_axe");
-		registerItem(ENTROPIC_PICKAXE, "entropic_pickaxe");
-		registerItem(ENTROPIC_SHOVEL, "entropic_shovel");
-		registerItem(ENTROPIC_HOE, "entropic_hoe");
-		registerItem(ENTROPIC_HELMET, "entropic_helmet");
-		registerItem(ENTROPIC_CHESTPLATE, "entropic_chestplate");
-		registerItem(ENTROPIC_LEGGINGS, "entropic_leggings");
-		registerItem(ENTROPIC_BOOTS, "entropic_boots");
-		registerItem(REAPER_HOOD, "reaper_hood");
-		registerItem(REAPER_CLOAK, "reaper_cloak");
-		registerItem(REAPER_TROUSERS, "reaper_trousers");
-		registerItem(REAPER_SHOES, "reaper_shoes");
 	}
 	
-	private static void registerItem(Item item, String registername)
+	@Override
+	public void register()
 	{
-		GameData.register_impl(item.setUnlocalizedName(registername).setRegistryName(registername));
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public static void registerRenders()
-	{
-		renderItem(NETHER_STAR_SHARD);
-		renderItem(NETHER_STAR_DUST);
-		renderItem(ATROPHIC_SHARD);
-		renderItem(ATROPHIC_CRYSTAL);
-		renderItem(ATROPHIC_SWORD);
-		renderItem(ATROPHIC_AXE);
-		renderItem(ATROPHIC_PICKAXE);
-		renderItem(ATROPHIC_SHOVEL);
-		renderItem(ATROPHIC_HOE);
-		renderItem(ATROPHIC_HELMET);
-		renderItem(ATROPHIC_CHESTPLATE);
-		renderItem(ATROPHIC_LEGGINGS);
-		renderItem(ATROPHIC_BOOTS);
-		renderItem(NECROTIC_STAR);
-		renderItem(NECROTIC_SWORD);
-		renderItem(NECROTIC_AXE);
-		renderItem(NECROTIC_PICKAXE);
-		renderItem(NECROTIC_SHOVEL);
-		renderItem(NECROTIC_HOE);
-		renderItem(NECROTIC_HELMET);
-		renderItem(NECROTIC_CHESTPLATE);
-		renderItem(NECROTIC_LEGGINGS);
-		renderItem(NECROTIC_BOOTS);
-		renderItem(ENTROPIC_MATTER_UNSTABLE);
-		renderItem(ENTROPIC_MATTER_STABLE);
-		renderItem(ENTROPIC_SWORD);
-		renderItem(ENTROPIC_AXE);
-		renderItem(ENTROPIC_PICKAXE);
-		renderItem(ENTROPIC_SHOVEL);
-		renderItem(ENTROPIC_HOE);
-		renderItem(ENTROPIC_HELMET);
-		renderItem(ENTROPIC_CHESTPLATE);
-		renderItem(ENTROPIC_LEGGINGS);
-		renderItem(ENTROPIC_BOOTS);
-		renderItem(REAPER_HOOD);
-		renderItem(REAPER_CLOAK);
-		renderItem(REAPER_TROUSERS);
-		renderItem(REAPER_SHOES);
-	}
-	
-	@SideOnly(Side.CLIENT)
-	private static void renderItem(Item item)
-	{
-		renderItem(item, 0);
-	}
-	
-	@SideOnly(Side.CLIENT)
-	private static void renderItem(Item item, int meta)
-	{
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(MoWithers.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+		
+		addItem("nether_star_shard", NETHER_STAR_SHARD, MoWithers.MO_TAB);
+		addItem("nether_star_dust", NETHER_STAR_DUST, MoWithers.MO_TAB);
+		addItem("atrophic_shard", ATROPHIC_SHARD, MoWithers.MO_TAB);
+		addItem("atrophic_crystal", ATROPHIC_CRYSTAL, MoWithers.MO_TAB);
+		addItem("atrophic_sword", ATROPHIC_SWORD, MoWithers.MO_TAB);
+		addItem("atrophic_axe", ATROPHIC_AXE, MoWithers.MO_TAB);
+		addItem("atrophic_pickaxe", ATROPHIC_PICKAXE, MoWithers.MO_TAB);
+		addItem("atrophic_shovel", ATROPHIC_SHOVEL, MoWithers.MO_TAB);
+		addItem("atrophic_hoe", ATROPHIC_HOE, MoWithers.MO_TAB);
+		addItem("atrophic_helmet", ATROPHIC_HELMET, MoWithers.MO_TAB);
+		addItem("atrophic_chestplate", ATROPHIC_CHESTPLATE, MoWithers.MO_TAB);
+		addItem("atrophic_leggings", ATROPHIC_LEGGINGS, MoWithers.MO_TAB);
+		addItem("atrophic_boots", ATROPHIC_BOOTS, MoWithers.MO_TAB);
+		addItem("necrotic_star", NECROTIC_STAR, MoWithers.MO_TAB);
+		addItem("necrotic_sword", NECROTIC_SWORD, MoWithers.MO_TAB);
+		addItem("necrotic_axe", NECROTIC_AXE, MoWithers.MO_TAB);
+		addItem("necrotic_pickaxe", NECROTIC_PICKAXE, MoWithers.MO_TAB);
+		addItem("necrotic_shovel", NECROTIC_SHOVEL, MoWithers.MO_TAB);
+		addItem("necrotic_hoe", NECROTIC_HOE, MoWithers.MO_TAB);
+		addItem("necrotic_helmet", NECROTIC_HELMET, MoWithers.MO_TAB);
+		addItem("necrotic_chestplate", NECROTIC_CHESTPLATE, MoWithers.MO_TAB);
+		addItem("necrotic_leggings", NECROTIC_LEGGINGS, MoWithers.MO_TAB);
+		addItem("necrotic_boots", NECROTIC_BOOTS, MoWithers.MO_TAB);
+		addItem("entropic_matter_unstable", ENTROPIC_MATTER_UNSTABLE, MoWithers.MO_TAB);
+		addItem("entropic_matter", ENTROPIC_MATTER_STABLE, MoWithers.MO_TAB);
+		addItem("entropic_sword", ENTROPIC_SWORD, MoWithers.MO_TAB);
+		addItem("entropic_axe", ENTROPIC_AXE, MoWithers.MO_TAB);
+		addItem("entropic_pickaxe", ENTROPIC_PICKAXE, MoWithers.MO_TAB);
+		addItem("entropic_shovel", ENTROPIC_SHOVEL, MoWithers.MO_TAB);
+		addItem("entropic_hoe", ENTROPIC_HOE, MoWithers.MO_TAB);
+		addItem("entropic_helmet", ENTROPIC_HELMET, MoWithers.MO_TAB);
+		addItem("entropic_chestplate", ENTROPIC_CHESTPLATE, MoWithers.MO_TAB);
+		addItem("entropic_leggings", ENTROPIC_LEGGINGS, MoWithers.MO_TAB);
+		addItem("entropic_boots", ENTROPIC_BOOTS, MoWithers.MO_TAB);
+		addItem("reaper_hood", REAPER_HOOD, MoWithers.MO_TAB);
+		addItem("reaper_cloak", REAPER_CLOAK, MoWithers.MO_TAB);
+		addItem("reaper_trousers", REAPER_TROUSERS, MoWithers.MO_TAB);
+		addItem("reaper_shoes", REAPER_SHOES, MoWithers.MO_TAB);
 	}
 }

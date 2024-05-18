@@ -1,8 +1,6 @@
 package net.endermanofdoom.mowithers;
 
-import net.endermanofdoom.mowithers.registry.MBlocks;
 import net.endermanofdoom.mowithers.registry.MEntity;
-import net.endermanofdoom.mowithers.registry.MItems;
 import net.endermanofdoom.mowithers.registry.MLoot;
 import net.endermanofdoom.mowithers.registry.MSounds;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -14,8 +12,6 @@ public class CommonProxy
 	public void preInit(FMLPreInitializationEvent e)
 	{
 		MSounds.registerSounds();
-		MBlocks.registerBlocks();
-		MItems.registerItems();
 		MLoot.registerLoot();
 	}
 	

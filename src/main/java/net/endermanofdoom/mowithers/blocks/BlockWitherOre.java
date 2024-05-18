@@ -2,7 +2,6 @@ package net.endermanofdoom.mowithers.blocks;
 
 import java.util.Random;
 
-import net.endermanofdoom.mowithers.MoWithers;
 import net.endermanofdoom.mowithers.registry.MItems;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.MapColor;
@@ -19,7 +18,6 @@ public class BlockWitherOre extends BlockOre
         super(color);
         setHardness(3.0F);
         setResistance(100.0F);
-        setCreativeTab(MoWithers.MO_TAB);
 		setHarvestLevel("pickaxe", 3);
     }
     

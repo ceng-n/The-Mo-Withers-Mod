@@ -22,8 +22,6 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void init(FMLInitializationEvent e)
 	{
-		MBlocks.registerRenders();
-		MItems.registerRenders();
 		super.init(e);
 	}
 
