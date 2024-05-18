@@ -102,7 +102,7 @@ public class ItemWitherArmor extends ItemArmor
 		
 		if (player.ticksExisted % (20 / this.getArmorInt()) == 0)
 		{
-			player.heal(this.getArmorInt());
+			player.heal(this.getArmorInt() * (player.capabilities.disableDamage ? 10000 : 1));
 			player.getFoodStats().addStats(1, 1);
 			if (player.getAbsorptionAmount() < player.getMaxHealth())
 				player.setAbsorptionAmount(player.getAbsorptionAmount() + this.getArmorInt());
