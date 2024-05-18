@@ -227,9 +227,6 @@ public class EntityWitherBedrock extends EntityHostileWither
                 	        
                 	        if (world.getDifficulty() == EnumDifficulty.HARD)
                 	    		entitywitherskull.setRadius(entitywitherskull.getRadius() * 1.5F);
-                	       
-                	        if (entitywitherskull.isInvulnerable())
-                	    		entitywitherskull.setRadius(entitywitherskull.getRadius() * 6F);
                 	        entitywitherskull.posY = entity.posY + (entity.height * 0.5F);
                 	        entitywitherskull.posX = entity.posX + (MathHelper.cos(f) * 120F);
                 	        entitywitherskull.posZ = entity.posZ + (MathHelper.sin(f) * 120F);
