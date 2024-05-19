@@ -43,7 +43,6 @@ public class EntityWitherAir extends EntityHostileWither
         this.moveHelper = new EntityWitherAir.WitherMoveHelper(this);
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void initEntityAI()
     {
         this.tasks.addTask(0, new AIDoNothing());

@@ -6,8 +6,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.endermanofdoom.mowithers.entity.monster.*;
 import net.endermanofdoom.mowithers.entity.wither.*;
-import net.endermanofdoom.mowithers.registry.MBlocks;
-import net.endermanofdoom.mowithers.registry.MItems;
 import net.endermanofdoom.mowithers.render.*;
 
 public class ClientProxy extends CommonProxy

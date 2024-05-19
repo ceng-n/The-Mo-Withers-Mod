@@ -15,7 +15,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -103,7 +102,6 @@ public class MEvents
 	public void onMobSpawnEvent(EntityJoinWorldEvent event)
 	{
 		Entity entity = event.getEntity();
-		World world = event.getWorld();
 		
         if (!entity.world.isRemote && entity instanceof EntityLivingBase)
         {
