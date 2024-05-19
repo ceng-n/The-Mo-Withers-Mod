@@ -6,7 +6,6 @@ import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mowithers.events.MEvents;
 import net.endermanofdoom.mowithers.registry.MBlocks;
 import net.endermanofdoom.mowithers.registry.MItems;
-import net.minecraft.AgeOfMinecraft.EngenderConfig;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -84,19 +83,19 @@ public class MoWithers
 	
 	public static void debug(Object message)
 	{
-		if (EngenderConfig.debugMode)
+		if (true)
 			logger.info("[DEBUG] " + message);
 	}
 	
 	public static void warn(Object message)
 	{
-		if (EngenderConfig.debugMode)
+		if (true)
 			logger.warn(message);
 	}
 
 	public static void error(Object message)
 	{
-		if (EngenderConfig.debugMode)
+		if (true)
 		{
 			Throwable exception;
 			

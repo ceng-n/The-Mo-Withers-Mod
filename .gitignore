@@ -21,3 +21,5 @@ build
 eclipse
 run
 /libs/
+/rebuild.bat
+/setup.bat
