@@ -34,12 +34,16 @@ public class EntityWitherDiamond extends EntityHostileWither
         this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
+    protected Block getShotBlock() 
+    {
+		return Blocks.DIAMOND_BLOCK;
+	}
+    
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
     {
         super.setSkullStats(skull, damage, invul);
         skull.setRadius(1F);
         skull.setType(27);
-        skull.setPlacedBlockState(Blocks.DIAMOND_BLOCK.getDefaultState());
         skull.setSkullTexture("wither/block/wither_diamond");
         skull.setMod(MoWithers.MODID);
     }

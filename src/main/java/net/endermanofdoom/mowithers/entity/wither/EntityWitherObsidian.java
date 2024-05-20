@@ -32,12 +32,16 @@ public class EntityWitherObsidian extends EntityHostileWither
         this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
+    protected Block getShotBlock() 
+    {
+		return Blocks.OBSIDIAN;
+	}
+    
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
     {
         super.setSkullStats(skull, damage, invul);
         skull.setType(26);
         skull.setRadius(2F);
-        skull.setPlacedBlockState(Blocks.OBSIDIAN.getDefaultState());
         skull.setSkullTexture("wither/block/wither_obsidian");
         skull.setMod(MoWithers.MODID);
     }

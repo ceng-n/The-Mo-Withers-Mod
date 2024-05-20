@@ -34,12 +34,16 @@ public class EntityWitherEmerald extends EntityHostileWither
         this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
     
+    protected Block getShotBlock() 
+    {
+		return Blocks.EMERALD_BLOCK;
+	}
+    
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
     {
         super.setSkullStats(skull, damage, invul);
         skull.setRadius(1F);
         skull.setType(28);
-        skull.setPlacedBlockState(Blocks.EMERALD_BLOCK.getDefaultState());
         skull.setSkullTexture("wither/block/wither_emerald");
         skull.setMod(MoWithers.MODID);
     }

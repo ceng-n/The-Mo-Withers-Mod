@@ -45,6 +45,11 @@ public class EntityWitherBedrock extends EntityHostileWither
 		super(worldIn);
 		this.experienceValue *= 2400;
 	}
+    
+    protected Block getShotBlock() 
+    {
+		return Blocks.BEDROCK;
+	}
 	
 	protected void initEntityAI()
     {
@@ -62,7 +67,6 @@ public class EntityWitherBedrock extends EntityHostileWither
         super.setSkullStats(skull, damage, invul);
         skull.setRadius(8F);
         skull.setType(20);
-        skull.setPlacedBlockState(Blocks.BEDROCK.getDefaultState());
         skull.setDeflect(true);
         skull.setMod(MoWithers.MODID);
         skull.setSkullTexture("wither/superboss/wither_bedrock");

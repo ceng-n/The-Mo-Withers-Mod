@@ -33,18 +33,17 @@ public class EntityWitherGravel extends EntityHostileWither
         super.initEntityAI();
         this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
-	
-    public boolean canDestroyBlock(BlockPos blockIn)
+    
+    protected Block getShotBlock() 
     {
-        return super.canDestroyBlock(blockIn) && world.getBlockState(blockIn).getBlock() != Blocks.GRAVEL;
-    }
+		return Blocks.GRAVEL;
+	}
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
     {
         super.setSkullStats(skull, damage, invul);
         skull.setRadius(2F);
         skull.setType(19);
-        skull.setPlacedBlockState(Blocks.GRAVEL.getDefaultState());
         skull.setSkullTexture("wither/block/wither_gravel");
         skull.setMod(MoWithers.MODID);
     }

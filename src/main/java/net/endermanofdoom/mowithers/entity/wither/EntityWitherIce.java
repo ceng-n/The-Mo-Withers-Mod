@@ -60,11 +60,11 @@ public class EntityWitherIce extends EntityHostileWither
     {
         return EnumWitherType.BLOCK_ROCK;
     }
-	
-    public boolean canDestroyBlock(BlockPos blockIn)
+    
+    protected Block getShotBlock() 
     {
-        return super.canDestroyBlock(blockIn) && world.getBlockState(blockIn).getBlock() != Blocks.WATER && world.getBlockState(blockIn).getBlock() != Blocks.FLOWING_WATER;
-    }
+		return rand.nextBoolean() ? Blocks.PACKED_ICE : Blocks.ICE;
+	}
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
     {

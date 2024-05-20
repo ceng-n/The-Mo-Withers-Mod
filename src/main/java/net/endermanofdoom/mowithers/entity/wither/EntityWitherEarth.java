@@ -33,6 +33,11 @@ public class EntityWitherEarth extends EntityHostileWither
 		super(worldIn);
 		this.experienceValue *= 8;
 	}
+    
+    protected Block getShotBlock() 
+    {
+		return Blocks.DIRT;
+	}
 	
 	protected void initEntityAI()
     {
