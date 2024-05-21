@@ -32,11 +32,11 @@ public class EntityWitherSand extends EntityHostileWither
         super.initEntityAI();
         this.targetTasks.addTask(2, new net.endermanofdoom.mca.entity.ai.EntityAINearestAttackableTargetInCube<EntityLivingBase>(this, EntityLivingBase.class, WITHERTARGETS));
     }
-	
-    public boolean canDestroyBlock(BlockPos blockIn)
+    
+    protected Block getShotBlock() 
     {
-        return super.canDestroyBlock(blockIn) && world.getBlockState(blockIn).getBlock() != Blocks.SAND && world.getBlockState(blockIn).getBlock() != Blocks.SANDSTONE;
-    }
+		return rand.nextBoolean() ? Blocks.SANDSTONE : Blocks.SAND;
+	}
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
     {
