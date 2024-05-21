@@ -111,7 +111,7 @@ public class MEvents
             {
                 if (entities instanceof EntityPlayer && ((EntityPlayer)entities).inventory.armorItemInSlot(3) != null && ((EntityPlayer)entities).inventory.armorItemInSlot(3).getItem() instanceof ItemWitherArmor && ((EntityPlayer)entities).inventory.armorItemInSlot(2) != null && ((EntityPlayer)entities).inventory.armorItemInSlot(2).getItem() instanceof ItemWitherArmor&& ((EntityPlayer)entities).inventory.armorItemInSlot(1) != null && ((EntityPlayer)entities).inventory.armorItemInSlot(1).getItem() instanceof ItemWitherArmor&& ((EntityPlayer)entities).inventory.armorItemInSlot(0) != null && ((EntityPlayer)entities).inventory.armorItemInSlot(0).getItem() instanceof ItemWitherArmor && ((ItemArmor) ((EntityPlayer)entities).inventory.armorItemInSlot(3).getItem()).getArmorMaterial() == MItems.TIER_4_WITHER_ARMOR && ((ItemArmor) ((EntityPlayer)entities).inventory.armorItemInSlot(2).getItem()).getArmorMaterial() == MItems.TIER_4_WITHER_ARMOR && ((ItemArmor) ((EntityPlayer)entities).inventory.armorItemInSlot(1).getItem()).getArmorMaterial() == MItems.TIER_4_WITHER_ARMOR && ((ItemArmor) ((EntityPlayer)entities).inventory.armorItemInSlot(0).getItem()).getArmorMaterial() == MItems.TIER_4_WITHER_ARMOR)
                 {
-                	((EntityPlayer)entities).heal(((EntityLivingBase)entity).getMaxHealth());
+                	((EntityPlayer)entities).setHealth(((EntityPlayer)entities).getHealth() + ((EntityLivingBase)entity).getMaxHealth());
                 }
             }
         }
