@@ -2,7 +2,6 @@ package net.endermanofdoom.mowithers;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.endermanofdoom.mac.util.ReflectionUtil;
 import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mowithers.events.MEvents;
 import net.endermanofdoom.mowithers.registry.MBlocks;
