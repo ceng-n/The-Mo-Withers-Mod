@@ -185,7 +185,7 @@ public class EntityWitherBedrock extends EntityHostileWither
                     {
                     	flyposX = entity.posX + (focushover > 500 ? -32D : 32D);
                     	flyposZ = entity.posZ;
-                        double d2 = entity.posY - this.posY;
+                        double d2 = (entity.posY + entity.getEyeHeight()) - (this.posY - height);
                         double d4 = entity.posX - this.posX;
                         double d5 = entity.posZ - this.posZ;
                         
