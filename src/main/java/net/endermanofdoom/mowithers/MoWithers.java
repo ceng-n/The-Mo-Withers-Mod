@@ -7,6 +7,7 @@ import net.endermanofdoom.mowithers.events.MEvents;
 import net.endermanofdoom.mowithers.registry.MBlocks;
 import net.endermanofdoom.mowithers.registry.MItems;
 import net.endermanofdoom.mowithers.registry.MRecipes;
+import net.endermanofdoom.mowithers.worldgen.MWorldGenOres;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -17,6 +18,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import javax.annotation.Nullable;
 
@@ -75,6 +77,7 @@ public class MoWithers
 	public void postInit(FMLPostInitializationEvent e)
 	{
 		proxy.postInit(e);
+		GameRegistry.registerWorldGenerator(new MWorldGenOres(), 100);
 		logger.info("Finished The Mo' Withers Mod!");
 	}
 
