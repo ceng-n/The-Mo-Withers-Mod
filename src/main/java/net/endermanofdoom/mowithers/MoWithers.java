@@ -6,6 +6,7 @@ import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mowithers.events.MEvents;
 import net.endermanofdoom.mowithers.registry.MBlocks;
 import net.endermanofdoom.mowithers.registry.MItems;
+import net.endermanofdoom.mowithers.registry.MRecipes;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -58,6 +59,7 @@ public class MoWithers
 		logger.info("Started The Mo' Withers Mod!");
 		MBlocks.INSTANCE.init();
 		MItems.INSTANCE.init();
+		MRecipes.INSTANCE.init();
 		MinecraftForge.EVENT_BUS.register(this);
 		MinecraftForge.EVENT_BUS.register(new MEvents());
 		proxy.preInit(e);
