@@ -14,8 +14,8 @@ import net.minecraftforge.common.util.EnumHelper;
 public class MItems extends AbstractItemRegistry
 {
 	public static final MItems INSTANCE = new MItems(MoWithers.MODID);
-	public static final ToolMaterial TIER_1_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier1Wither", 4, 4683, 16.0F, 76.0F, 16);
-	public static final ToolMaterial TIER_2_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier2Wither", 9, 85350, 32.0F, 796.0F, 22);
+	public static final ToolMaterial TIER_1_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier1Wither", 4, 4683, 16.0F, 116.0F, 16);
+	public static final ToolMaterial TIER_2_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier2Wither", 9, 85350, 32.0F, 1996.0F, 22);
 	public static final ToolMaterial TIER_3_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier3Wither", 99, 7567500, 120.0F, 79996.0F, 26);
 	
 	public static final ArmorMaterial TIER_1_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier1Wither", MoWithers.MODID + ":atrophic", 162, new int[]{3, 7, 8, 4}, 16, SoundEvents.BLOCK_CHORUS_FLOWER_GROW, 4.0F);
