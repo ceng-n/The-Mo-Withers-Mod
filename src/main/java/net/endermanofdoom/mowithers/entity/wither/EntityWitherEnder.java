@@ -1,10 +1,11 @@
 package net.endermanofdoom.mowithers.entity.wither;
 
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
+import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mca.entity.EnumWitherType;
+import net.endermanofdoom.mca.entity.IEndMob;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import net.endermanofdoom.mowithers.MoWithers;
-
 import java.util.List;
 import javax.annotation.Nullable;
 import com.google.common.base.Predicate;
@@ -13,7 +14,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.monster.EntityShulker;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -26,7 +26,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class EntityWitherEnder extends EntityHostileWither
+public class EntityWitherEnder extends EntityHostileWither implements IEndMob
 {
 	public EntityWitherEnder(World worldIn) 
 	{
@@ -42,7 +42,7 @@ public class EntityWitherEnder extends EntityHostileWither
 	    {
 	        public boolean apply(@Nullable Entity p_apply_1_)
 	        {
-	            return p_apply_1_ instanceof EntityLivingBase && ((EntityLivingBase)p_apply_1_).attackable() && !(p_apply_1_ instanceof EntityEnderman) && !(p_apply_1_ instanceof EntityDragon) && !(p_apply_1_ instanceof EntityShulker) && !(p_apply_1_ instanceof EntityWitherEnder);
+	            return p_apply_1_ instanceof EntityLivingBase && ((EntityLivingBase)p_apply_1_).attackable() && !MCA.isEndMob((EntityLivingBase)p_apply_1_);
 	        }
 	    };
         super.initEntityAI();
@@ -286,7 +286,7 @@ public class EntityWitherEnder extends EntityHostileWither
     
     public boolean isOnSameTeam(Entity friend)
     {
-    	if (friend instanceof EntityEnderman || friend instanceof EntityDragon)
+    	if (friend instanceof EntityLivingBase && MCA.isEndMob((EntityLivingBase) friend))
     		return true;
     	
     	return super.isOnSameTeam(friend);
@@ -294,6 +294,6 @@ public class EntityWitherEnder extends EntityHostileWither
     
 	public int[] getBarColor() 
 	{
-		return new int[] {0, 255, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+		return new int[] {222, 0, 222, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
 	}
 }

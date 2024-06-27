@@ -7,6 +7,7 @@ import net.endermanofdoom.mac.enums.EnumGender;
 import net.endermanofdoom.mac.enums.EnumLevel;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
+import net.endermanofdoom.mowithers.MoWithers;
 import net.endermanofdoom.mowithers.registry.MSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -62,7 +63,8 @@ public class EntityWitherAvatar extends EntityHostileWither
         skull.setRadius(this.getPhasePercent(0.6F) ? 10F : 5F);
         skull.setType(11);
         skull.setDeflect(true);
-        skull.setSkullTexture("wither/element/wither_air");
+        skull.setSkullTexture("wither/element/avatar_aura");
+        skull.setMod(MoWithers.MODID);
     }
     
     public TextFormatting getNameColor()

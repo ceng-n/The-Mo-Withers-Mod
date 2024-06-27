@@ -2,6 +2,7 @@ package net.endermanofdoom.mowithers.entity.wither;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.EnumWitherType;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
+import net.endermanofdoom.mca.registrey.MCASounds;
 import net.endermanofdoom.mowithers.MoWithers;
 
 import java.util.List;
@@ -86,19 +87,19 @@ public class EntityWitherZombie extends EntityHostileWither
     protected SoundEvent getAmbientSound()
     {
     	this.playSound(SoundEvents.ENTITY_WITHER_AMBIENT, getSoundVolume(), getSoundPitch() + 0.4F);
-        return SoundEvents.ENTITY_ZOMBIE_AMBIENT;
+        return MCASounds.ENTITY_GREATER_ZOMBIE[0];
     }
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
     	this.playSound(SoundEvents.ENTITY_WITHER_HURT, getSoundVolume(), getSoundPitch() + 0.4F);
-        return SoundEvents.ENTITY_ZOMBIE_HURT;
+        return MCASounds.ENTITY_GREATER_ZOMBIE[1];
     }
 
     protected SoundEvent getDeathSound()
     {
     	this.playSound(SoundEvents.ENTITY_WITHER_DEATH, getSoundVolume(), getSoundPitch() + 0.4F);
-        return SoundEvents.ENTITY_ZOMBIE_DEATH;
+        return MCASounds.ENTITY_GREATER_ZOMBIE[2];
     }
     
     protected double getFlyHeight()
