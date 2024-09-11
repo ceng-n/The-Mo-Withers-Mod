@@ -89,6 +89,7 @@ public class ItemWitherArmor extends ItemArmor
         if (equipmentSlot == this.armorType)
         {
             multimap.put(SharedMonsterAttributes.MAX_HEALTH.getName(), new AttributeModifier(ARMOR_MODIFIERS[equipmentSlot.getIndex()], "Health modifier", hpboost, 0));
+            multimap.put(SharedMonsterAttributes.MOVEMENT_SPEED.getName(), new AttributeModifier(ARMOR_MODIFIERS[equipmentSlot.getIndex()], "MS modifier", 0.01D * getArmorInt(), 0));
             multimap.put(SharedMonsterAttributes.KNOCKBACK_RESISTANCE.getName(), new AttributeModifier(ARMOR_MODIFIERS[equipmentSlot.getIndex()], "KB modifier", 0.25D, 0));
             multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ARMOR_MODIFIERS[equipmentSlot.getIndex()], "Strength modifier", attackboost, 0));
         }
@@ -158,19 +159,17 @@ public class ItemWitherArmor extends ItemArmor
 			this.effectPlayer(player, MobEffects.RESISTANCE, this.getArmorInt() > 4 ? 3 : this.getArmorInt() - 1);
 			this.effectPlayer(player, MobEffects.HASTE, this.getArmorInt() - 1);
 			this.effectPlayer(player, MobEffects.FIRE_RESISTANCE, 0);
-			player.removePotionEffect(MobEffects.WEAKNESS);
 			player.removePotionEffect(MobEffects.MINING_FATIGUE);
 		}
 		
 		if (slot == EntityEquipmentSlot.LEGS)
 		{
 			this.effectPlayer(player, MobEffects.JUMP_BOOST, this.getArmorInt() - 1);
-			this.effectPlayer(player, MobEffects.STRENGTH, this.getArmorInt() - 1);
+			player.removePotionEffect(MobEffects.WEAKNESS);
 		}
 		
 		if (slot == EntityEquipmentSlot.FEET)
 		{
-			this.effectPlayer(player, MobEffects.SPEED, this.getArmorInt() - 1);
 			player.removePotionEffect(MobEffects.SLOWNESS);
 		}
 		

@@ -14,9 +14,9 @@ public class BlockWitherOre extends BlockOre
     public BlockWitherOre(MapColor color)
     {
         super(color);
-        setHardness(3.0F);
-        setResistance(100.0F);
-		setHarvestLevel("pickaxe", 3);
+        setHardness(50.0F);
+        setResistance(5000.0F);
+		setHarvestLevel("pickaxe", 7);
     }
     
     /**

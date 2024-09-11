@@ -21,8 +21,8 @@ public class MRecipes extends AbstractRecipeRegistry
 	@Override
 	public void register()
 	{
-		addShapedRecipe(MItems.ATROPHIC_CRYSTAL, "shards_to_crystal", " 0 ,010, 0 ", MItems.ATROPHIC_SHARD, MCAItems.getResource("ruby"));
-		addShapedRecipe(MItems.NECROTIC_STAR, "crystals_to_rottenstar", "202,010,202", MCAItems.getResource("ruby"), MBlocks.ATROPHIC_BLOCK, Items.NETHER_STAR);
+		addShapedRecipe(MItems.ATROPHIC_CRYSTAL, "shards_to_crystal", " 0 ,010, 0 ", MItems.ATROPHIC_SHARD, MCAItems.getNugget("dragon_scale"));
+		addShapedRecipe(MItems.NECROTIC_STAR, "crystals_to_rottenstar", "202,010,202", MCAItems.getNugget("dragon_scale"), MBlocks.ATROPHIC_BLOCK, Items.NETHER_STAR);
 		addShapedRecipe(MItems.ENTROPIC_MATTER_STABLE, "stabilize_matter", "000,010,000", MItems.NECROTIC_STAR, MItems.ENTROPIC_MATTER_UNSTABLE);
 		addShapedRecipe(MBlocks.ATROPHIC_BLOCK, "crystal_to_block", "000,000,000", MItems.ATROPHIC_CRYSTAL);
 		addShapelessRecipe(MItems.ATROPHIC_CRYSTAL, 9, "block_to_crystal", MBlocks.ATROPHIC_BLOCK);
