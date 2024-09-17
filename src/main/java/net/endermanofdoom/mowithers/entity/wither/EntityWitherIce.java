@@ -1,6 +1,5 @@
 package net.endermanofdoom.mowithers.entity.wither;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
-import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mca.entity.EnumWitherType;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import java.util.List;
@@ -16,6 +15,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.monster.EntityPolarBear;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -221,7 +221,8 @@ public class EntityWitherIce extends EntityHostileWither
     		this.deathTicks = 2;
             if (!this.world.isRemote && this.canDropLoot() && this.world.getGameRules().getBoolean("doMobLoot"))
             {
-            	MCA.dropXP(this, posX, posY + this.getEyeHeight(), posZ, this.getExperiencePoints(this.attackingPlayer));
+            	for (EntityPlayer entityplayer : world.playerEntities)
+					entityplayer.addExperience(experienceValue);
                 this.dropLoot(true, 0, getLastDamageSource());
             }
             

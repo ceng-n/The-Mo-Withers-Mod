@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import net.endermanofdoom.mowithers.MoWithers;
@@ -256,7 +255,8 @@ public class EntityWitherAir extends EntityHostileWither
     		this.deathTicks = 2;
             if (!this.world.isRemote && this.canDropLoot() && this.world.getGameRules().getBoolean("doMobLoot"))
             {
-            	MCA.dropXP(this, posX, posY + this.getEyeHeight(), posZ, this.getExperiencePoints(this.attackingPlayer));
+            	for (EntityPlayer entityplayer : world.playerEntities)
+					entityplayer.addExperience(experienceValue);
                 this.dropLoot(true, 0, getLastDamageSource());
             }
             

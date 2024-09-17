@@ -91,7 +91,7 @@ public class EntityWitherBedrock extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 80000D;
+		return super.getMobHealth() * 800000D;
 	}
     
     public boolean isSuperBoss()
@@ -439,18 +439,11 @@ public class EntityWitherBedrock extends EntityHostileWither
         }
 
         boolean flag = this.world.getGameRules().getBoolean("doMobLoot");
-        int i = this.experienceValue;
-
         if (!this.world.isRemote)
         {
             if (flag)
             {
             	this.entityDropItem(new ItemStack(MItems.ENTROPIC_MATTER_UNSTABLE, 1), this.getEyeHeight());
-                
-                if (this.deathTicks > 150 && flag)
-                {
-                    this.dropExperience(MathHelper.floor((float)i * 0.016F));
-                }
             }
 
             if (this.deathTicks == 1)
@@ -463,7 +456,8 @@ public class EntityWitherBedrock extends EntityHostileWither
         {
             if (flag)
             {
-                this.dropExperience(MathHelper.floor((float)i * 0.2F));
+            	for (EntityPlayer entityplayer : world.playerEntities)
+					entityplayer.addExperience(experienceValue);
             	this.entityDropItem(new ItemStack(MBlocks.ATROPHIC_BLOCK, 16 + rand.nextInt(16)), this.getEyeHeight());
             }
 
@@ -476,17 +470,7 @@ public class EntityWitherBedrock extends EntityHostileWither
     	}
     }
     
-    private void dropExperience(int p_184668_1_)
-    {
-        while (p_184668_1_ > 0)
-        {
-            int i = EntityXPOrb.getXPSplit(p_184668_1_);
-            p_184668_1_ -= i;
-            this.world.spawnEntity(new EntityXPOrb(this.world, this.posX, this.posY + this.getEyeHeight(), this.posZ, i));
-        }
-    }
-    
-	public int[] getBarColor() 
+    public int[] getBarColor() 
 	{
 		return new int[] {55, 55, 55, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
 	}

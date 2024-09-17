@@ -136,6 +136,6 @@ public class EntityWitherDiamond extends EntityHostileWither
     
 	public int[] getBarColor() 
 	{
-		return new int[] {0, 55, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
+		return new int[] {0, 155, 255, 0, this.isArmored() || this.isSuperBoss() ? 122 : 0, this.isArmored() || this.isSuperBoss() ? 255 : 0};
 	}
 }

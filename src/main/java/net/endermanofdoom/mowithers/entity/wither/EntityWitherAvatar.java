@@ -482,15 +482,8 @@ public class EntityWitherAvatar extends EntityHostileWither
         }
 
         boolean flag = this.world.getGameRules().getBoolean("doMobLoot");
-        int i = this.experienceValue;
-
         if (!this.world.isRemote)
         {
-            if (this.deathTicks > 150 && this.deathTicks % 5 == 0 && flag)
-            {
-                this.dropExperience(MathHelper.floor((float)i * 0.08F));
-            }
-
             if (this.deathTicks == 1)
             {
                 this.broadcastSound(this.getDeathSound(), this.getSoundPitch());
@@ -501,7 +494,8 @@ public class EntityWitherAvatar extends EntityHostileWither
         {
             if (flag)
             {
-                this.dropExperience(MathHelper.floor((float)i * 0.2F));
+            	for (EntityPlayer entityplayer : world.playerEntities)
+					entityplayer.addExperience(experienceValue);
                 this.dropLoot(true, 0, getLastDamageSource());
             }
             this.world.getWorldInfo().setThundering(false);

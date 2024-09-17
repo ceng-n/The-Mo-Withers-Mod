@@ -115,7 +115,7 @@ public class EntityWitherVoid extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 60000D;
+		return super.getMobHealth() * 600000D;
 	}
 
 	public double getMobAttack() 
@@ -336,7 +336,6 @@ public class EntityWitherVoid extends EntityHostileWither
                 
                 if (this.deathTicks > 450 && flag)
                 {
-                    this.dropExperience(MathHelper.floor((float)i * 0.016F));
                 	this.entityDropItem(new ItemStack(Items.NETHER_STAR, 1 + rand.nextInt(4)), this.getEyeHeight());
                 }
             }
@@ -355,10 +354,6 @@ public class EntityWitherVoid extends EntityHostileWither
             {
                 this.playHurtSound(null);
                 this.world.newExplosion(this, this.getHeadX(1), this.getHeadY(1), this.getHeadZ(1), 14F, false, net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this));
-                if (flag)
-                {
-                    this.dropExperience(MathHelper.floor((float)i * 0.2F));
-                }
             }
 
             if (this.deathTicks == 1)
@@ -371,7 +366,8 @@ public class EntityWitherVoid extends EntityHostileWither
         {
             if (flag)
             {
-                this.dropExperience(MathHelper.floor((float)i * 0.2F));
+            	for (EntityPlayer entityplayer : world.playerEntities)
+					entityplayer.addExperience(experienceValue);
             	this.entityDropItem(new ItemStack(MBlocks.NETHER_STAR_BLOCK, 1 + rand.nextInt(4)), this.getEyeHeight());
             }
 

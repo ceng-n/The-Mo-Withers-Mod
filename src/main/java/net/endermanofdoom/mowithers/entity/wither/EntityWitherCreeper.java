@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 import com.google.common.base.Predicate;
 
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
-import net.endermanofdoom.mca.MCA;
 import net.endermanofdoom.mca.entity.EnumWitherType;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import net.endermanofdoom.mowithers.MoWithers;
@@ -321,7 +320,8 @@ public class EntityWitherCreeper extends EntityHostileWither
             if (this.canDropLoot() && this.world.getGameRules().getBoolean("doMobLoot"))
             {
             	this.deathTicks = 2; 
-            	MCA.dropXP(this, posX, posY + this.getEyeHeight(), posZ, this.getExperiencePoints(this.attackingPlayer));
+            	for (EntityPlayer entityplayer : world.playerEntities)
+					entityplayer.addExperience(experienceValue);
                 this.dropLoot(true, 0, getLastDamageSource());
             }
         }

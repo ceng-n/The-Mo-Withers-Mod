@@ -107,7 +107,7 @@ public class EntityWitherDragon extends EntityHostileWither
 
 	public double getMobHealth() 
 	{
-		return super.getMobHealth() * 90000D;
+		return super.getMobHealth() * 900000D;
 	}
 
 	public double getMobAttack() 
@@ -370,11 +370,6 @@ public class EntityWitherDragon extends EntityHostileWither
             if (flag)
             {
             	this.entityDropItem(new ItemStack(Items.NETHER_STAR, 1 + rand.nextInt(4)), this.getEyeHeight());
-                
-                if (this.deathTicks > 150 && flag)
-                {
-                    this.dropExperience(MathHelper.floor((float)i * 0.016F));
-                }
             }
 
             if (this.deathTicks == 1)
@@ -387,7 +382,8 @@ public class EntityWitherDragon extends EntityHostileWither
         {
             if (flag)
             {
-                this.dropExperience(MathHelper.floor((float)i * 0.2F));
+            	for (EntityPlayer entityplayer : world.playerEntities)
+					entityplayer.addExperience(experienceValue);
             	this.entityDropItem(new ItemStack(MBlocks.NETHER_STAR_BLOCK, 1 + rand.nextInt(4)), this.getEyeHeight());
             	this.entityDropItem(new ItemStack(Blocks.DRAGON_EGG, 1 + rand.nextInt(4)), this.getEyeHeight());
             }

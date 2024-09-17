@@ -31,7 +31,7 @@ public class ItemWitherSword extends ItemSword
 	{
 	    if (target instanceof EntityLivingBase && attacker instanceof EntityPlayer)
 	    {
-    		target.addPotionEffect(new PotionEffect(MobEffects.WITHER, 20 * (int)this.getAttackDamage(), getToolMaterialName() == "Tier3Wither" ? 4 : getToolMaterialName() == "Tier2Wither" ? 2 : 1));
+    		target.addPotionEffect(new PotionEffect(MobEffects.WITHER, 20 * (int)attackDamage, getToolMaterialName() == "Tier3Wither" ? 4 : getToolMaterialName() == "Tier2Wither" ? 2 : 1));
 	    }
 
 	    return super.hitEntity(stack, target, attacker);
@@ -59,7 +59,7 @@ public class ItemWitherSword extends ItemSword
 	      entitywitherskull.posX = playerIn.posX + vec3.x;
 	      entitywitherskull.posY = playerIn.posY + vec3.y + 1.5D;
 	      entitywitherskull.posZ = playerIn.posZ + vec3.z;
-	      entitywitherskull.setDamage(this.getAttackDamage() + 4);
+	      entitywitherskull.setDamage(attackDamage);
 	      entitywitherskull.setRadius(getToolMaterialName() == "Tier3Wither" ? 7F : getToolMaterialName() == "Tier2Wither" ? 3F : 1F);
 	      entitywitherskull.setSkullSize(0.5F);
 	      entitywitherskull.playSound(SoundEvents.ENTITY_WITHER_SHOOT, 1F, 1F);
