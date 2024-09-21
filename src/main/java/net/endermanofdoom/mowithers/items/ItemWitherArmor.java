@@ -216,7 +216,7 @@ public class ItemWitherArmor extends ItemArmor
 			&& player.inventory.armorItemInSlot(0) != null && player.inventory.armorItemInSlot(0).getItem() instanceof ItemWitherArmor;
 	}
 	
-	private int getArmorInt() 
+	public int getArmorInt() 
 	{
 		if (getArmorMaterial() == MItems.TIER_4_WITHER_ARMOR)
 			return 10;

@@ -29,6 +29,7 @@ public class MRecipes extends AbstractRecipeRegistry
 		addShapedRecipe(MBlocks.NETHER_STAR_BLOCK, "star_to_block", "000,000,000", Items.NETHER_STAR);
 		addShapelessRecipe(Items.NETHER_STAR, 9, "block_to_star", MBlocks.NETHER_STAR_BLOCK);
 		addShapedRecipe(Items.NETHER_STAR, "shards_to_star", " 0 ,000, 0 ", MItems.NETHER_STAR_SHARD);
+		addShapedRecipe(MItems.NETHER_STAR_ROD, "shards_to_rod", "0,0,0", MItems.NETHER_STAR_SHARD);
 		addShapelessRecipe(MItems.NETHER_STAR_SHARD, 5, "star_to_shards", Items.NETHER_STAR);
 		addShapedRecipe(MItems.NETHER_STAR_SHARD, "dust_to_shard", "000,000,000", MItems.NETHER_STAR_DUST);
 		addShapelessRecipe(MItems.NETHER_STAR_DUST, 9, "shard_to_dust", MItems.NETHER_STAR_SHARD);
@@ -64,11 +65,11 @@ public class MRecipes extends AbstractRecipeRegistry
 		material = "entropic";
 		item = MItems.ENTROPIC_MATTER_STABLE;
 		
-		addShapedRecipe(MItems.ENTROPIC_PICKAXE, material + "_pickaxe", "000, 1 , 1 ", item, Items.BLAZE_ROD);
-		addShapedRecipe(MItems.ENTROPIC_AXE, material + "_axe", "00,01, 1", item, Items.BLAZE_ROD);
-		addShapedRecipe(MItems.ENTROPIC_SHOVEL, material + "_shovel", "0,1,1", item, Items.BLAZE_ROD);
-		addShapedRecipe(MItems.ENTROPIC_HOE, material + "_hoe", "00, 1, 1", item, Items.BLAZE_ROD);
-		addShapedRecipe(MItems.ENTROPIC_SWORD, material + "_sword", "0,0,1", item, Items.BLAZE_ROD);
+		addShapedRecipe(MItems.ENTROPIC_PICKAXE, material + "_pickaxe", "000, 1 , 1 ", item, MItems.NETHER_STAR_ROD);
+		addShapedRecipe(MItems.ENTROPIC_AXE, material + "_axe", "00,01, 1", item, MItems.NETHER_STAR_ROD);
+		addShapedRecipe(MItems.ENTROPIC_SHOVEL, material + "_shovel", "0,1,1", item, MItems.NETHER_STAR_ROD);
+		addShapedRecipe(MItems.ENTROPIC_HOE, material + "_hoe", "00, 1, 1", item, MItems.NETHER_STAR_ROD);
+		addShapedRecipe(MItems.ENTROPIC_SWORD, material + "_sword", "0,0,1", item, MItems.NETHER_STAR_ROD);
 		addShapedRecipe(MItems.ENTROPIC_HELMET, material + "_helmet", "000,0 0", item);
 		addShapedRecipe(MItems.ENTROPIC_CHESTPLATE, material + "_chestplate", "0 0,000,000", item);
 		addShapedRecipe(MItems.ENTROPIC_LEGGINGS, material + "_leggings", "000,0 0,0 0", item);

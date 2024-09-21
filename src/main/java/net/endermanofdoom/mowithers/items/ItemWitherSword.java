@@ -59,12 +59,19 @@ public class ItemWitherSword extends ItemSword
 	      entitywitherskull.posX = playerIn.posX + vec3.x;
 	      entitywitherskull.posY = playerIn.posY + vec3.y + 1.5D;
 	      entitywitherskull.posZ = playerIn.posZ + vec3.z;
-	      entitywitherskull.setDamage(attackDamage);
+	      float multiplier = 1F;
+	        for (ItemStack i : playerIn.getArmorInventoryList())
+	        {
+	            if (i.getItem() instanceof ItemWitherArmor)
+	            	multiplier += ((ItemWitherArmor)i.getItem()).getArmorInt() * 0.25F;
+	        }
+	      entitywitherskull.setDamage(getAttackDamage() * multiplier);
 	      entitywitherskull.setRadius(getToolMaterialName() == "Tier3Wither" ? 7F : getToolMaterialName() == "Tier2Wither" ? 3F : 1F);
 	      entitywitherskull.setSkullSize(0.5F);
 	      entitywitherskull.playSound(SoundEvents.ENTITY_WITHER_SHOOT, 1F, 1F);
 	      entitywitherskull.setMod(MCA.MODID);
 	      entitywitherskull.setSkullTexture("boss/wither");
+	      playerIn.getHeldItem(handIn).damageItem(10, playerIn);
 	      if (!worldIn.isRemote)
 	      {
 	          worldIn.spawnEntity(entitywitherskull);

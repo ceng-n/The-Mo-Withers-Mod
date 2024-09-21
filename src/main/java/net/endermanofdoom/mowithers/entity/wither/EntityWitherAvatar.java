@@ -8,6 +8,7 @@ import net.endermanofdoom.mac.enums.EnumLevel;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
 import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
 import net.endermanofdoom.mowithers.MoWithers;
+import net.endermanofdoom.mowithers.registry.MItems;
 import net.endermanofdoom.mowithers.registry.MSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -16,7 +17,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -381,16 +381,6 @@ public class EntityWitherAvatar extends EntityHostileWither
       return (this.rand.nextFloat() - this.rand.nextFloat()) * 0.3F + 1.0F;
     }
     
-    private void dropExperience(int p_184668_1_)
-    {
-        while (p_184668_1_ > 0)
-        {
-            int i = EntityXPOrb.getXPSplit(p_184668_1_);
-            p_184668_1_ -= i;
-            this.world.spawnEntity(new EntityXPOrb(this.world, this.posX, this.posY + this.getEyeHeight(), this.posZ, i));
-        }
-    }
-    
     protected int minDropNum(int lootingModifier)
     {
     	return 128 + lootingModifier;
@@ -497,6 +487,7 @@ public class EntityWitherAvatar extends EntityHostileWither
             	for (EntityPlayer entityplayer : world.playerEntities)
 					entityplayer.addExperience(experienceValue);
                 this.dropLoot(true, 0, getLastDamageSource());
+                this.dropItem(MItems.ELEMENTS_ROD, 1);
             }
             this.world.getWorldInfo().setThundering(false);
             this.world.getWorldInfo().setRaining(false);

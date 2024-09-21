@@ -14,21 +14,23 @@ import net.minecraftforge.common.util.EnumHelper;
 public class MItems extends AbstractItemRegistry
 {
 	public static final MItems INSTANCE = new MItems(MoWithers.MODID);
-	public static final ToolMaterial TIER_1_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier1Wither", 8, 4683, 16.0F, 116.0F, 16);
-	public static final ToolMaterial TIER_2_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier2Wither", 9, 85350, 32.0F, 1996.0F, 22);
-	public static final ToolMaterial TIER_3_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier3Wither", 99, 7567500, 120.0F, 79996.0F, 26);
+	public static final ToolMaterial TIER_1_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier1Wither", 8, 50362, 32.0F, 200.0F, 20);
+	public static final ToolMaterial TIER_2_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier2Wither", 9, 604350, 32.0F, 4000.0F, 22);
+	public static final ToolMaterial TIER_3_WITHER_TOOLS = EnumHelper.addToolMaterial("Tier3Wither", 99, 7567500, 120.0F, 80000.0F, 26);
 	
-	public static final ArmorMaterial TIER_1_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier1Wither", MoWithers.MODID + ":atrophic", 162, new int[]{3, 7, 8, 4}, 16, SoundEvents.BLOCK_CHORUS_FLOWER_GROW, 4.0F);
-	public static final ArmorMaterial TIER_2_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier2Wither", MoWithers.MODID + ":necrotic", 2468, new int[]{3, 7, 9, 4}, 20, SoundEvents.BLOCK_SHULKER_BOX_OPEN, 10.0F);
-	public static final ArmorMaterial TIER_3_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier3Wither", MoWithers.MODID + ":entropic", 120000, new int[]{4, 7, 10, 4}, 22, SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, 20.0F);
+	public static final ArmorMaterial TIER_1_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier1Wither", MoWithers.MODID + ":atrophic", 324, new int[]{4, 9, 9, 4}, 16, SoundEvents.BLOCK_CHORUS_FLOWER_GROW, 6.0F);
+	public static final ArmorMaterial TIER_2_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier2Wither", MoWithers.MODID + ":necrotic", 14468, new int[]{5, 9, 9, 4}, 20, SoundEvents.BLOCK_SHULKER_BOX_OPEN, 8.0F);
+	public static final ArmorMaterial TIER_3_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier3Wither", MoWithers.MODID + ":entropic", 120000, new int[]{5, 10, 10, 5}, 22, SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, 10.0F);
 	public static final ArmorMaterial TIER_4_WITHER_ARMOR = EnumHelper.addArmorMaterial("Tier4Wither", MoWithers.MODID + ":reaper", Integer.MAX_VALUE, new int[]{30, 30, 30, 30}, 30, SoundEvents.BLOCK_CLOTH_PLACE, 80.0F);
 
+	public static final Item NETHER_STAR_ROD = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item NETHER_STAR_SHARD = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item NETHER_STAR_DUST = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
+	public static final Item ELEMENTS_ROD = new ItemElementsRod();
 	public static final Item ATROPHIC_SHARD = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ATROPHIC_CRYSTAL = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ATROPHIC_SWORD = new ItemWitherSword(TIER_1_WITHER_TOOLS);
-	public static final Item ATROPHIC_AXE = new ItemWitherAxe(TIER_1_WITHER_TOOLS, 120F, -3F);
+	public static final Item ATROPHIC_AXE = new ItemWitherAxe(TIER_1_WITHER_TOOLS, 400F, -3F);
 	public static final Item ATROPHIC_PICKAXE = new ItemWitherPickaxe(TIER_1_WITHER_TOOLS);
 	public static final Item ATROPHIC_SHOVEL = new ItemWitherShovel(TIER_1_WITHER_TOOLS);
 	public static final Item ATROPHIC_HOE = new ItemWitherHoe(TIER_1_WITHER_TOOLS);
@@ -38,7 +40,7 @@ public class MItems extends AbstractItemRegistry
 	public static final Item ATROPHIC_BOOTS = new ItemWitherArmor(TIER_1_WITHER_ARMOR, 1, EntityEquipmentSlot.FEET, 10D, 2D);
 	public static final Item NECROTIC_STAR = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item NECROTIC_SWORD = new ItemWitherSword(TIER_2_WITHER_TOOLS);
-	public static final Item NECROTIC_AXE = new ItemWitherAxe(TIER_2_WITHER_TOOLS, 1200F, -2.75F);
+	public static final Item NECROTIC_AXE = new ItemWitherAxe(TIER_2_WITHER_TOOLS, 8000F, -2.75F);
 	public static final Item NECROTIC_PICKAXE = new ItemWitherPickaxe(TIER_2_WITHER_TOOLS);
 	public static final Item NECROTIC_SHOVEL = new ItemWitherShovel(TIER_2_WITHER_TOOLS);
 	public static final Item NECROTIC_HOE = new ItemWitherHoe(TIER_2_WITHER_TOOLS);
@@ -49,7 +51,7 @@ public class MItems extends AbstractItemRegistry
 	public static final Item ENTROPIC_MATTER_UNSTABLE = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ENTROPIC_MATTER_STABLE = new ItemSimpleFoiled().setCreativeTab(MoWithers.MO_TAB);
 	public static final Item ENTROPIC_SWORD = new ItemWitherSword(TIER_3_WITHER_TOOLS);
-	public static final Item ENTROPIC_AXE = new ItemWitherAxe(TIER_3_WITHER_TOOLS, 120000F, -2F);
+	public static final Item ENTROPIC_AXE = new ItemWitherAxe(TIER_3_WITHER_TOOLS, 160000F, -2F);
 	public static final Item ENTROPIC_PICKAXE = new ItemWitherPickaxe(TIER_3_WITHER_TOOLS);
 	public static final Item ENTROPIC_SHOVEL = new ItemWitherShovel(TIER_3_WITHER_TOOLS);
 	public static final Item ENTROPIC_HOE = new ItemWitherHoe(TIER_3_WITHER_TOOLS);
@@ -57,9 +59,9 @@ public class MItems extends AbstractItemRegistry
 	public static final Item ENTROPIC_CHESTPLATE = new ItemWitherArmor(TIER_3_WITHER_ARMOR, 1, EntityEquipmentSlot.CHEST, 8000D, 24D);
 	public static final Item ENTROPIC_LEGGINGS = new ItemWitherArmor(TIER_3_WITHER_ARMOR, 2, EntityEquipmentSlot.LEGS, 7000D, 24D);
 	public static final Item ENTROPIC_BOOTS = new ItemWitherArmor(TIER_3_WITHER_ARMOR, 1, EntityEquipmentSlot.FEET, 4000D, 24D);
-	public static final Item REAPER_HOOD = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 1, EntityEquipmentSlot.HEAD, 8000000D, 4000D);
-	public static final Item REAPER_CLOAK = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 1, EntityEquipmentSlot.CHEST, 8000000D, 4000D);
-	public static final Item REAPER_TROUSERS = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 2, EntityEquipmentSlot.LEGS, 8000000D, 4000D);
+	public static final Item REAPER_HOOD = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 1, EntityEquipmentSlot.HEAD, 10000000D, 5000D);
+	public static final Item REAPER_CLOAK = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 1, EntityEquipmentSlot.CHEST, 16000000D, 8000D);
+	public static final Item REAPER_TROUSERS = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 2, EntityEquipmentSlot.LEGS, 14000000D, 7000D);
 	public static final Item REAPER_SHOES = new ItemWitherArmor(TIER_4_WITHER_ARMOR, 1, EntityEquipmentSlot.FEET, 8000000D, 4000D);
 
 	private MItems(String modid)
@@ -82,9 +84,11 @@ public class MItems extends AbstractItemRegistry
 	@Override
 	public void register()
 	{
-		
+
+		addItem("nether_star_rod", NETHER_STAR_ROD, MoWithers.MO_TAB);
 		addItem("nether_star_shard", NETHER_STAR_SHARD, MoWithers.MO_TAB);
 		addItem("nether_star_dust", NETHER_STAR_DUST, MoWithers.MO_TAB);
+		addItem("elements_rod", ELEMENTS_ROD, MoWithers.MO_TAB);
 		addItem("atrophic_shard", ATROPHIC_SHARD, MoWithers.MO_TAB);
 		addItem("atrophic_crystal", ATROPHIC_CRYSTAL, MoWithers.MO_TAB);
 		addItem("atrophic_sword", ATROPHIC_SWORD, MoWithers.MO_TAB);

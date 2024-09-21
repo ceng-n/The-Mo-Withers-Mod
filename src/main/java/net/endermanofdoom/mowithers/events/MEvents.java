@@ -93,7 +93,7 @@ public class MEvents
         	if (entity.world.getGameRules().getBoolean("doMobLoot"))
             for (int k = 0; k < Maths.random(8 * wither.getWitherScale(), 16 * wither.getWitherScale()); ++k)
             {
-            	wither.dropItem(wither.isRaidBoss() ? MItems.ENTROPIC_MATTER_UNSTABLE : MItems.ATROPHIC_SHARD, 1);
+            	wither.dropItem(wither.isRaidBoss() || wither.isSuperBoss() ? MItems.ENTROPIC_MATTER_UNSTABLE : MItems.ATROPHIC_SHARD, 1);
             }
         }
 	}
