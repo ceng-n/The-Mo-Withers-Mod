@@ -162,6 +162,11 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
         {
             this.setBesideClimbableBlock(this.collidedHorizontally);
             
+            if (this.ticksExisted % 20 == 0)
+            {
+                this.heal(1);
+            }
+            
             List<Entity> list = this.world.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox().grow(24D));
 
             for (Entity entity : list)
@@ -176,18 +181,7 @@ public class EntityCultist extends EntitySpellcasterIllager implements IVariedMo
                     	this.onKillEntity((EntityLivingBase) entity);
                 }
             }
-            
-            if (this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue() != this.getMobHealth())
-            {
-                this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(getMobHealth());
-                this.setHealth((float) getMobHealth());
-            }
-            if (this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getBaseValue() != this.getMobAttack())
-            	this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(getMobAttack());
 
-            if (this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getBaseValue() != this.getMobSpeed())
-            	this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(getMobSpeed());
-            
             if (this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).getBaseValue() != (this.getVariant() + 1) * 24D)
             	this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue((this.getVariant() + 1) * 24D);
             

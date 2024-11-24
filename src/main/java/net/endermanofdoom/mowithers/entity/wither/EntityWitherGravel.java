@@ -80,7 +80,7 @@ public class EntityWitherGravel extends EntityHostileWither
 	
     public float getWitherScale()
     {
-    	return super.getWitherScale() * 1.5F;
+    	return super.getWitherScale() * 1F;
     }
     
     protected SoundEvent getAmbientSound()

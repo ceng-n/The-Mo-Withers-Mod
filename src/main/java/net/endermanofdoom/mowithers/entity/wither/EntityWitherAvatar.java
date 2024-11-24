@@ -59,11 +59,11 @@ public class EntityWitherAvatar extends EntityHostileWither
     
     public void setSkullStats(EntityWitherSkullShared skull, float damage, boolean invul)
     {
-        super.setSkullStats(skull, damage, invul);
-        skull.setRadius(this.getPhasePercent(0.6F) ? 10F : 5F);
+        super.setSkullStats(skull, invul ? damage * 50 : damage, invul);
+        skull.setRadius(invul ? 20F : this.getPhasePercent(0.6F) ? 10F : 5F);
         skull.setType(11);
-        skull.setDeflect(true);
-        skull.setSkullTexture("wither/element/avatar_aura");
+        skull.setDeflect(invul);
+        skull.setSkullTexture(invul ? "wither/superboss/wither_void" : "wither/element/avatar_aura");
         skull.setMod(MoWithers.MODID);
     }
     
