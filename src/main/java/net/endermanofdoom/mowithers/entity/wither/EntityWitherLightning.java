@@ -1,6 +1,8 @@
 package net.endermanofdoom.mowithers.entity.wither;
 import net.endermanofdoom.mca.entity.boss.EntityHostileWither;
-import net.endermanofdoom.mca.entity.projectile.EntityWitherSkullShared;
+import net.endermanofdoom.mca.entity.projectile.*;
+import net.endermanofdoom.mca.registrey.MCASounds;
+
 import javax.annotation.Nullable;
 
 import net.endermanofdoom.mowithers.MoWithers;
@@ -14,6 +16,7 @@ import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -45,6 +48,31 @@ public class EntityWitherLightning extends EntityHostileWither
         this.playSound(SoundEvents.AMBIENT_CAVE, 10F, 2F);
         skull.setSkullTexture("wither/element/wither_lightning");
         skull.setMod(MoWithers.MODID);
+    }
+    
+    protected void launchWitherSkullToEntity(int p_82216_1_, EntityLivingBase p_82216_2_)
+    {
+    	if (p_82216_1_ == 0)
+    		super.launchWitherSkullToEntity(p_82216_1_, p_82216_2_);
+    	else
+		{
+	        double d0 = this.getHeadX(p_82216_1_);
+	        double d1 = this.getHeadY(p_82216_1_);
+	        double d2 = this.getHeadZ(p_82216_1_);
+			EntityBeamAttack beam = new EntityBeamAttack(world, p_82216_2_, this, d0, d1, d2);
+			beam.posX = d0;
+			beam.posY = d1;
+			beam.posZ = d2;
+			beam.accelerationX = p_82216_2_.posX;
+			beam.accelerationY = p_82216_2_.posY;
+			beam.accelerationZ = p_82216_2_.posZ;
+			beam.targetEntity = p_82216_2_;
+			beam.setParticleType(EnumParticleTypes.END_ROD);
+			beam.setDamageType(new EntityDamageSource("lightningBolt", this).setDamageBypassesArmor().setDamageIsAbsolute().setDifficultyScaled().setMagicDamage());
+			beam.setDamage((float)getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getBaseValue());
+			this.world.spawnEntity(beam);
+			playSound(MCASounds.lightningshot, 10F, 1F);
+		}
     }
     
     public TextFormatting getNameColor()
